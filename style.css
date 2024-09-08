@@ -1,0 +1,318 @@
+body {
+    margin: 0;
+    font-family: "Montserrat";
+    color: black;
+    background-color: white;
+    font-size: 16px;
+    text-align: left;
+}
+
+.navbar {
+    display: flex;
+    justify-content: start;
+    margin: 35px 5% 55px 5%;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 15px;
+    align-items: center;
+}
+
+.navbar li {
+    display: inline-block;
+    padding: 0px 15px;
+    color: black;
+}
+
+.navbar img {
+    margin-left: auto;
+    margin-right: auto;
+    width: 200px;
+    height: auto;
+}
+
+.intro {
+    height: 30rem;
+    padding-top: 1rem;
+    background-image: url(./img/intro.jpg);
+    background-position: center;
+    background-repeat: none;
+}
+
+.intro h1 {
+    color: rgb(255, 255, 255);
+    font-size: 2rem;
+    margin-top: 13rem;
+    padding: 2rem;
+    background-color: rgba(7, 20, 61, 0.75);
+    text-align: center;
+}
+
+.summary, h1  {
+    padding: 1rem 3rem 0rem 3rem;
+    background-color: rgb(255, 255, 255);
+    width: 80%;
+    margin: 10px auto;
+}
+
+.testimonial, .photos, .meetup {
+    margin: 4em auto;
+}
+
+.photos img {
+    width: 30%;
+    margin: 1.5%;
+}
+
+@media only screen and (max-width: 1048px){
+.photos img {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+}
+
+.tables {
+    background-image: url(./img/tables_bg.jpg);
+    padding: 70px 0px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+#tables-container h2 {
+    text-align: center;
+    font-size: 32px;
+}
+
+.weekly {
+    padding: 10px;
+    margin: 20px 30px;
+    color: #0c1a8a;
+    flex-basis: 280px;
+    font-size: 22px;
+    text-align: center;
+    background-color: #eaeaead4;
+    outline: solid #fff 7px;
+}
+
+.weekly img:hover {
+    opacity: .5;
+    border: 2px solid #fff;
+}
+
+
+
+.overall {
+    padding: 10px;
+    margin: 20px 30px;
+    color: #0c1a8a;
+    flex-basis: 280px;
+    font-size: 22px;
+    text-align: center;
+    background-color: #eaeaead4;
+    outline: solid #fff 7px
+}
+
+.post {
+    padding: 10px;
+    margin: 20px 30px;
+    color: #0c1a8a;
+    flex-basis: 280px;
+    font-size: 22px;
+    text-align: center;
+    background-color: #eaeaead4;
+    outline: solid #fff 7px
+}
+
+table {
+    height: 20%;
+    /*left: 10%;*/
+    margin: 0px auto 20px auto;
+    /*overflow-y: scroll;*/
+    /*position: static;*/
+    width: 80%;
+  }
+
+thead th {
+    background: #88CCF1;
+    color: #FFF;
+    font-family: 'Lato', sans-serif;
+    font-weight: 100;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  tr {
+    background: #f4f7f8;
+    border-bottom: 1px solid #FFF;
+    margin-bottom: 5px;
+  }
+  
+  th, td {
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    padding: 10px 20px;
+    text-align: center;
+    font-size: 18px;
+  }
+
+  .userName {
+    width: 50%;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 15px;
+    border-radius: 10px;
+    color: #fff;
+  }
+
+  #userName {
+    width: 80%;
+    background-image: url(./img/football_field_opt.jpg);
+    background-repeat: no-repeat;
+    margin: 40px auto 0px auto;
+    background-size:cover;
+    background-position: center;
+  }
+
+  .footer-nav {
+    padding: 1rem;
+    background-color: rgb(8, 16, 84);
+    display: flex;
+    justify-content: start;
+}
+
+.footer-nav li {
+    display: inline-block;
+    padding: 0px 15px;
+    color: rgb(255, 255, 255);
+}
+
+/* form */
+
+
+  #halfOver {
+    width: 50%;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 15px;
+    /*border-radius: 10px;*/
+    color: #fff;
+  } 
+
+  .form-group {
+    margin-bottom: 15px;
+  }
+
+  label {
+    display: inline-block;
+    margin-bottom: 5px;
+    color: #000;
+  }
+
+  input[type="text"],
+  select {
+    width: 90%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+
+  button {
+    background-color: #ff000043;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  button:hover {
+    background-color: #ff0000;
+  }
+
+  .submitButton{
+    height:50px;
+    width: 150px;
+    border-radius: 10px;
+    background-color: green;
+    font-size: large;
+    color: #fff;
+    cursor: pointer;
+  }
+
+  .submitButton:hover {
+    background-color: rgb(84, 187, 53);
+    color: rgb(0, 0, 0);
+  }
+
+  /* CSS for the modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 60%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  background-color: white;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+details {
+  border: 1px solid #aaa;
+  border-radius: 4px;
+  padding: 0.5em 0.5em 0;
+  color: #fff;
+}
+
+summary {
+  font-weight: bold;
+  margin: -0.5em -0.5em 0;
+  padding: 0.5em;
+}
+
+details[open] {
+  padding: 0.5em;
+}
+
+details[open] summary {
+  border-bottom: 1px solid #aaa;
+  margin-bottom: 0.5em;
+}
+
+/* Media queries for responsiveness */
+@media screen and (max-width: 768px) {
+    .form-container {
+    width: 100%;
+  }
+  form {
+    width: 98%;
+    background-position:left;
+  }
+  h1{
+    font-size: 4vh;
+  }
+
