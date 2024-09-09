@@ -7,10 +7,18 @@ body {
     text-align: left;
 }
 
+ol li {
+  margin-bottom: 30px;
+}
+
+ol > li::marker {
+  font-weight: bold;
+}
+
 .navbar {
     display: flex;
     justify-content: start;
-    margin: 35px 5% 55px 5%;
+    margin: 35px 5% 35px 5%;
     border-bottom: 1px solid #ccc;
     padding-bottom: 15px;
     align-items: center;
@@ -34,7 +42,6 @@ body {
     padding-top: 1rem;
     background-image: url(./img/intro.jpg);
     background-position: center;
-    background-repeat: none;
 }
 
 .intro h1 {
@@ -46,8 +53,27 @@ body {
     text-align: center;
 }
 
+.weeks01 {
+    height: 20rem;
+    padding-top: 5rem;
+    background-image: url(./img/steelfalc.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.games {
+    padding: 1rem 12rem 0rem 12rem;
+    background-color: rgb(255, 255, 255);
+    margin: 10px auto;
+}
+
+.weekTable {
+  margin-bottom: 60px;
+}
+
 .summary, h1  {
-    padding: 1rem 3rem 0rem 3rem;
+    padding: 1rem 15rem 0rem 15rem;
     background-color: rgb(255, 255, 255);
     margin: 10px auto;
 }
@@ -152,7 +178,7 @@ thead th {
   th, td {
     font-family: 'Lato', sans-serif;
     font-weight: 400;
-    padding: 10px 20px;
+    padding: 10px 10px;
     text-align: center;
     font-size: 18px;
   }
@@ -203,17 +229,18 @@ thead th {
   }
 
   label {
-    display: inline-block;
     margin-bottom: 5px;
     color: #000;
+    display: inline-flex;
   }
 
   input[type="text"],
   select {
-    width: 90%;
+    width: 80%;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 3px;
+    text-align: center;
   }
 
   button {
