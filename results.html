@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pick'em League</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+
+    <div class="navbar">
+        <div><a href="./index.html"><img src="./img/pickem_logo.png" alt="Pickem logo"></a></div>
+        <ul>
+        <a href="./weeks.html"><li>Weeks</li></a>
+        <a href=""><li>Results</li></a>
+        </ul>
+    </div>
+    
+    <div class="resultshero"></div>
+
+    
+
+    <div class="container">
+        <p style="font-size: 2em; font-weight: bold;">Week 01 Standings</p>
+        <!-- Main content with the table -->
+        <div class="main-content">
+            <table class="tableresults">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Points</th>
+                  <th>DB</th>
+                  <th>PS</th>
+                </tr>
+              </thead>
+              <tbody id="table-body">
+                <!-- Table data will be populated here dynamically -->
+              </tbody>
+            </table>
+          <img class="results-mont" src="./img/results_mont.jpg" alt="">
+        </div>
+      
+        <!-- Sidebar containing thumbnail images -->
+        <div class="sidebar">
+          <img src="./img/thumb_injury.jpg" alt="Thumbnail 1" class="thumbnail">
+          <p><strong>Injuries</strong></p>
+          <img src="./img/thumb_top.jpg" alt="Thumbnail 2" class="thumbnail">
+          <p><strong>Top 10</strong></p>
+          <img src="./img/thumb_run.jpg" alt="Thumbnail 3" class="thumbnail">
+          <p><strong>Epic Plays</strong></p>
+          <img src="./img/thumb_legends.jpg" alt="Thumbnail 4" class="thumbnail">
+          <p><strong>Legends</strong></p>
+        </div>
+    </div>
+
+      <div class="footer-nav">
+        <div><a href="./index.html"><img src="./img/pickem_logo.png" alt="Pickem logo"></a></div>
+        <ul>
+          <a href="./weeks.html"><li>Weeks</li></a>
+          <a href=""><li>Results</li></a>
+        </ul>
+      </div>
+
+      <script>
+        // URL of the deployed Apps Script Web App
+        const SHEET_URL = 'https://script.google.com/macros/s/AKfycbx1E7FnLNrL-MEfherghJIzzsZI78mbxfoAXXSprltkzN7hWy0SYEA2qQe2CPLIhJk/exec';
+      
+        // Function to fetch data and populate the table
+        function fetchTableData() {
+          fetch(SHEET_URL)
+            .then(response => response.json())
+            .then(data => {
+              const tableBody = document.getElementById('table-body');
+              tableBody.innerHTML = ''; // Clear any existing table rows
+              
+              data.forEach(row => {
+                let tableRow = document.createElement('tr');
+                
+                // Create table cells for each value (Name, Points, DB, PS)
+                row.forEach(cellData => {
+                  let cell = document.createElement('td');
+                  cell.textContent = cellData;
+                  tableRow.appendChild(cell);
+                });
+      
+                // Append the row to the table body
+                tableBody.appendChild(tableRow);
+              });
+            })
+            .catch(error => {
+              console.error('Error fetching data:', error);
+            });
+        }
+      
+        // Fetch data when the page loads
+        window.onload = fetchTableData;
+      </script>
+
+</body>
+</html>

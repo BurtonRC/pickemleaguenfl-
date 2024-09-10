@@ -6,50 +6,25 @@
     <title>Pick'em League</title>
     <link rel="stylesheet" type="text/css" href="style.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+</head>
 
 <body>
 
     <div class="navbar">
         <div><a href="./index.html"><img src="./img/pickem_logo.png" alt="Pickem logo"></a></div>
         <ul>
-        <a href="./weeks.html"><li>Weeks</li></a>
-        <a href=""><li>Results</li></a>
-        <a href=""><li>Blog</li></a>
+        <a href=""><li>Weeks</li></a>
+        <a href="./results.html"><li>Results</li></a>
         </ul>
     </div>
-<!--
-    // Orig form start
-    <div>
-    <form id="myForm" action="https://script.google.com/macros/s/AKfycbwoBfZo0pteV5Kp9CbA2lKX4Mm8WUcMqVdqiUGaRdqC094rJYH9JXcBdhHKuJvWvQI/exec" method="post">
-
-        <label for="FirstName">First Name:</label>
-        <input type="text" id="firstName" name="FirstName" required>
-        <label for="LastName">Last Name:</label>
-        <input type="text" id="lastName" name="LastName" required>
-
-      <input class="submitButton" type="submit" value="submit" />
-    </form>
-    </div>
-    // Modal HTML
-    <div id="myModal" class="modal">
-        <div class="modal-content">
-          <span class="close">&times;</span>
-          <p id="modalMessage"></p>
-        </div>
-      </div>
-      
-      <script src="./index.js">
-      </script>
-  
-  // Original form end
-    -->
     
     <div class="weeks01">
         
     </div>
     
     <div class="games">
-        <p style="font-size: 2em; font-weight: bold;">Week 01</p>
+        <p style="font-size: 2em; font-weight: bold; margin-bottom: 10px;">Week 01</p>
+        <hr>
         <p style="font-size: 1em; font-weight: bold;">Quick Guide for Weekly Game Selections</p>
         <p style="line-height: 2;">The table below lists the weekly games, input your choices in the table below:</p>
         <ol style="line-height: 1;">
@@ -420,130 +395,48 @@
             </div>
         </form>
     </div>
-    <!-- Modal HTML
-    <div id="myModal" class="modal">
-        <div class="modal-content">
-          <span class="close">&times;</span>
-          <p id="modalMessage"></p>
-        </div>
-      </div>-->
-      
-      <script>
-            document.getElementById('myForm').addEventListener('submit', function (event) {
-        event.preventDefault();
-
-        var form = document.getElementById('myForm');
-        var formData = new FormData(form);
-
-        var formObject = {};
-        formData.forEach(function (value, key) {
-            formObject[key] = value;
-        });
-
-        fetch('https://script.google.com/macros/s/AKfycbxQlx5vK9fyk6kysQ80tJbqFi5WTyh6L0u-q6u7Ep1wj5c9_r1dqFlgTXP9wEDv0Gg/exec', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/x-www-form-urlencoded',
-            },
-            body: new URLSearchParams(formObject)
-        })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Network response was not ok.');
-            }
-            return response.text();
-        })
-        .then(data => {
-            alert('Form submitted successfully: ' + data);
-        })
-        .catch(error => {
-            console.error('Error:', error);
-        });
-    });
-
-
-      </script>
-
-      <script src="./index.js">
-      </script>
-    <!--<div>        
-        <table>
-            <form id="myForm" action="https://script.google.com/macros/s/AKfycbx3O9RIIJs69aPub5Tqegy3zqsaSuRKMXZj5jhU_-F1B6DnXOsSasTp43piT6Jko_8/exec" method="post">                  
-                <thead>
-                    <tr>
-                    <th scope="col">Week 01 Games</th>
-                    <th scope="col">Day</th>
-                    <th scope="col">DB</th>
-                    <th scope="col">PS</th>
-                    <th scope="col">Selections</th>
-                    </tr>
-                </thead>
-                    <tbody>
-                        <tr>
-                        <td>Baltimore Ravens @ Kansas City Chiefs</td>
-                        <td>Thursday</td>
-                        
-                        <td>
-                            <label for="yes">Yes</label>
-                            <input type="radio" name="DriveBy" id="yes" value="Yes">
-                            <label for="no">No</label>
-                            <input type="radio" name="DriveBy" id="no" value="No">
-                        </td>
-                        
-                        <td>
-                            <select id="pointSpread" name="PointSpread">
-                                <option value="Cover">Team covers </option>
-                                <option value="No Cover">Team doesn't cover</option>
-                            </select>
-                        </td>
-                        <td>
-                            <select id="game01" name="Games">
-                            <option value="Baltimore">Baltimore Ravens</option>
-                            <option value="Kansas City">Kansas City Chiefs</option>
-                            </select>
-                        </td>
-                        </tr>
-                    </tbody>
-                <tr>
-                    <td>
-                        <input class="submitButton" type="submit" value="submit" />
-                    </td>
-                </tr>
-            </form>
-        </table>
-    </div>-->
-        
-       
-    
-    
-    <div id="tables-container">
-        <h2>Tables and Scores</h2>
-            <div class="tables">
-                <div class="weekly">
-                    <a href="./weeks.html"><img src="./img/weekly.jpg"></a>
-                    <h3>Weekly Picks</h3>
-                    <p>Role those bones and throw them darts to enter your picks.</p>
-                </div>
-                <div class="overall">
-                    <img src="./img/overall.jpg">
-                    <h3>Overall Rankings</h3>
-                    <p>Are you near the field or up in the nose bleed seats?</p>
-                </div>
-                <div class="post">
-                    <img src="./img/post.jpg">
-                    <h3>Post Season</h3>
-                    <p>Playoff shootouts and the Big Dance</p>
-                </div>
-            </div>
-    </div>
 
     <div class="footer-nav">
+        <div><a href="./index.html"><img src="./img/pickem_logo.png" alt="Pickem logo"></a></div>
         <ul>
           <a href=""><li>Weeks</li></a>
-          <a href=""><li>Results</li></a>
-          <a href=""><li>Blog</li></a>
+          <a href="./results.html"><li>Results</li></a>
         </ul>
       </div>
+
+      <script>
+        document.getElementById('myForm').addEventListener('submit', function (event) {
+    event.preventDefault();
+
+    var form = document.getElementById('myForm');
+    var formData = new FormData(form);
+
+    var formObject = {};
+    formData.forEach(function (value, key) {
+        formObject[key] = value;
+    });
+
+    fetch('https://script.google.com/macros/s/AKfycbwEHGeqe_5v0ZI6wqAIcKaZx_sfY6GF7pEbYn7ag_xefi_XJZTk7URXqurqW8eIrPg/exec', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: new URLSearchParams(formObject)
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok.');
+        }
+        return response.text();
+    })
+    .then(data => {
+        alert('Form submitted successfully: ' + data);
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
+});
+  </script>
 
 </body>
 </html>
