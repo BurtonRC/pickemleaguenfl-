@@ -299,6 +299,13 @@ thead th {
     text-align: center;
   }
 
+  #comments {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 5px;
+    width: 80%;
+  }
+
   button {
     background-color: #ff000043;
     color: #fff;
