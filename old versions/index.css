@@ -1,0 +1,357 @@
+/* General Styles */
+body {
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+  padding-top: 160px; /* Offset to prevent content from being hidden */
+}
+
+header, footer {
+  background-color: #04032e;
+}
+
+/* Navbar Styles */
+.navbar {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px 10px 20px; /* Adjust padding to fit links within the screen */
+  position: fixed; /* Make the navbar fixed */
+  top: 0; /* Stick it to the top of the page */
+  left: 0;
+  width: 100%;
+  z-index: 1000; /* Ensure it's above other content */
+  background-color: #04032e;
+}
+
+
+/* Sub-menu Styles */
+.sub-menu {
+  position: fixed; /* Make sub-menu fixed too */
+  top: 144px; /* Position it just below the navbar */
+  width: 100%;
+  background-color: #817d4c;
+  z-index: 998; /* Ensure it's just below the navbar */
+  text-align: center;
+  padding: 0px;
+}
+
+.sub-menu ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: inline-flex; /* Keep it horizontal on larger screens */
+  justify-content: center;
+  flex-wrap: wrap; /* Allows wrapping on smaller screens */
+}
+
+.sub-menu li {
+  z-index: 999;
+  color: #fff;
+  margin: 10px 40px; /* Adjust margins for spacing */
+}
+
+.sub-menu a {
+  text-decoration: none;
+  color: white;
+  padding: 10px 15px;
+  transition: background-color 0.3s ease;
+}
+
+.sub-menu a:hover {
+  background-color: #615d31; /* Hover effect for links */
+}
+
+.logo img {
+  height: 100px; /* Adjust the size as needed */
+  margin: 10px 50px;
+}
+
+.nav-toggle {
+  display: none; /* Hide hamburger icon by default */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+.hamburger {
+  width: 25px;
+  height: 3px;
+  background: white;
+  margin: 3px 0;
+  border-radius: 3px;
+}
+
+.nav-menu {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  margin: 0 80px 0 0;
+  padding: 0;
+  margin-left: auto; /* Push the menu to the right */
+}
+
+.nav-menu li {
+  display: inline;
+}
+
+.nav-menu a {
+  text-decoration: none;
+  color: #c0bc8b;
+  padding: 63px 20px;
+  transition: background-color 0.3s;
+}
+
+.nav-menu a:hover {
+  background-color: #817d4c;
+  color: #ffffff;
+}
+
+/* Content and Images */
+.intro {
+  background-image: url('./img/intro.jpg'); /* Make sure the image URL is correct */
+  background-size: cover;
+  background-position: center;
+  height: 600px; /* Adjust height as needed */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  padding: 20px;
+}
+
+.intro h1 {
+  margin: 0; 
+  color: rgb(255, 255, 255);
+  font-size: 2.5rem; /* Adjust font size as needed */
+  padding: 2rem;
+  background-color: rgba(7, 20, 61, 0.75);
+  text-align: center;
+}
+
+
+.summary, .photos, .tables-container {
+  padding: 20px;
+  max-width: 100%; /* Prevent overflow */
+  box-sizing: border-box;
+}
+
+.summary {
+  background-color: #f4f4f4; /* Example background color */
+  padding: 20px;
+  text-align: center;
+}
+
+.photos {
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* Adjust gap as needed */
+  flex-wrap: wrap;
+  padding: 20px;
+}
+
+.photos img {
+  max-width: 30%;
+  height: auto;
+  border-radius: 8px; /* Optional: Add rounded corners */
+  flex: 1 1 calc(33.333% - 20px); /* Three images in a row, adjust as needed */
+  box-sizing: border-box;
+}
+
+
+.tables-container {
+  padding: 20px;
+  background-image: url('./img/tables_bg.jpg'); /* Ensure this URL is correct */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.tables {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 100px;
+  justify-content: center;
+  height: 660px;
+  align-items: center;
+}
+
+.tables > div {
+  flex: 1 1 300px; /* Adjust base width to keep panels more rectangular */
+  max-width: 300px; /* Limit maximum width */
+  min-width: 250px; /* Set minimum width for smaller screens */
+  box-sizing: border-box;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.9); /* Semi-transparent background */
+  /*border-radius: 8px;*/
+  overflow: hidden;
+  padding: 25px;
+  aspect-ratio: 3 / 4; /* Maintain a portrait ratio */
+  height: 520px; /* Ensure boxes are tall enough */
+}
+
+.tables img {
+  width: 100%;
+  height: auto;
+  border-bottom: 2px solid #ddd; /* Optional: Add a border between image and text */
+}
+
+.tables h3 {
+  margin: 20px 0 5px;
+  color: #333; /* Ensure text color contrasts with background */
+}
+
+.tables p {
+  margin: 0;
+  color: #666; /* Ensure text color contrasts with background */
+}
+
+/* Footer styles */
+.footer-nav {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  background-color: #04032e;
+  border-top: 6px solid #817d4c;
+  color: white;
+}
+
+.footer-nav img {
+  height: 80px; /* Adjust size as needed */
+  margin: 20px 40px;
+}
+
+.footer-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 20px;
+}
+
+.footer-nav ul a {
+  text-decoration: none;
+  color: #c0bc8b;
+  padding: 62px 20px;
+}
+
+.footer-nav ul a:hover {
+  background-color: #817d4c;
+  color: #ffffff;
+}
+
+
+/* Responsive Adjustments */
+
+@media (max-width: 975px) {
+  .nav-menu a {
+    padding: 0;
+  }
+
+}
+
+
+@media (max-width: 768px) {
+  .nav-menu {
+      display: none; /* Hide menu by default */
+      flex-direction: column;
+      position: absolute;
+      top: 60px; /* Adjust based on navbar height */
+      right: 20px;
+      background-color: #24235c;
+      width: 100%; /* Full width on mobile */
+      max-width: 300px; /* Limit max-width for better appearance */
+      border-radius: 5px;
+      padding: 10px 0;
+  }
+
+  .nav-menu.active {
+      display: flex; /* Show menu when active */
+  }
+
+  .nav-toggle {
+      display: flex; /* Show hamburger icon on mobile */
+      position: absolute;
+      right: 50px;
+      top: 70px;
+  }
+
+  .navbar {
+      flex-direction: column;
+      align-items: flex-start;
+  }
+
+  .nav-menu li {
+      margin: 10px 0;
+      text-align: center;
+  }
+
+  /* Responsive Adjustments for Sub-menu */
+@media (max-width: 768px) {
+  .sub-menu ul {
+    flex-direction: column; /* Stack links vertically */
+    align-items: center; /* Center links */
+  }
+
+  .sub-menu li {
+    margin: 5px 0; /* Reduce margin to prevent overflow */
+  }
+}
+
+@media (max-width: 480px) {
+  .sub-menu li {
+    margin: 5px 0; /* Further reduce margin for very small screens */
+  }
+}
+
+  .footer-nav {
+      flex-direction: column;
+      align-items: flex-start;
+  }
+
+  .sub-menu {
+    top: 120px; /* Adjust sub-menu position on smaller screens */
+  }
+
+}
+
+/* Stack photos vertically on screens 768px or smaller */
+@media (max-width: 768px) {
+  .photos {
+    flex-direction: column; /* Stack images vertically */
+    align-items: center; /* Center images horizontally */
+  }
+
+  .photos img {
+    max-width: 90%; /* Adjust width to fit the screen */
+    margin-bottom: 20px; /* Space between images */
+  }
+}
+
+/* Ensure footer nav links are always visible on smaller screens */
+@media (max-width: 755px) {
+  .footer-nav .nav-menu {
+      display: none;
+  }
+}
+
+@media (max-width: 775px) {
+  .footer-nav ul {
+      display: none; /* Hide footer links below 775px */
+  }
+}
+
+@media (max-width: 380px) {
+  .nav-toggle {
+    right: 30px;
+  }
+
+  .logo img {
+    margin: 20px 20px;
+  }
+}
