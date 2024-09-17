@@ -1,0 +1,1048 @@
+@import '~@fortawesome/fontawesome-free/css/all.min.css';
+
+html {
+  font-family: Montserrat, sans-serif;
+}
+
+body {
+  background-color: #f5f5f5;
+  margin-bottom: 0;
+}
+
+a:hover {
+  color: #0283ae;
+}
+
+.sports-news-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.top-bar {
+  background-color: #101010;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  padding: 11px;
+}
+
+.top-bar-content {
+  display: flex;
+  /*width: 100%;*/
+  max-width: 1024px;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0 auto;
+  font-size: 14px;
+  padding: 0 20px;
+}
+
+.logo {
+  aspect-ratio: 1.69;
+  object-fit: contain;
+  object-position: center;
+  width: 127px;
+  max-width: 100%;
+}
+
+.nav-links {
+  /*align-self: end;*/
+  display: flex;
+  margin-top: 26px;
+  align-items: center;
+  gap: 35px;
+}
+
+.nav-links a:hover {
+  color:#b1945a;
+}
+
+.nav-links a:active {
+  color:#ffffff;
+}
+
+.nav-link {
+  color: #fff;
+  font-weight: 400;
+  align-self: stretch;
+  flex-grow: 1;
+  margin: 0 0 auto;
+}
+
+/* Hamburger Icon Styling */
+.hamburger-menu {
+  display: none; /* Hidden by default */
+}
+
+.hamburger-icon {
+  font-size: 30px;
+  cursor: pointer;
+  padding: 10px;
+  right: 20px;
+  top: 10px;
+  z-index: 1000;
+  color: #fff;
+}
+
+/* Hidden menu content */
+.menu-content {
+  display: none; /* Hidden by default */
+  background-color: white;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  padding-top: 50px; /* Add padding to push content below the icon */
+  align-items: center;
+  justify-content: flex-start;
+  z-index: 999;
+}
+
+/* When menu is open */
+.menu-content.menu-open {
+  display: flex; /* Flex will allow for the vertical column layout */
+}
+
+/* Close button (X) styling */
+.close-icon {
+  font-size: 30px;
+  cursor: pointer;
+  position: fixed;
+  right: 20px;
+  top: 10px;
+  z-index: 1001;
+  padding: 10px;
+}
+
+.mobile-nav-links a {
+  display: block;
+  text-align: center;
+  padding: 15px;
+  font-size: 18px;
+  width: 100%;
+}
+
+.mobile-search-box {
+  padding: 20px;
+  width: 100%;
+}
+
+.mobile-search-box form {
+  display: flex;
+  justify-content: center;
+}
+
+.mobile-search-box .search-input {
+  width: 80%;
+  padding: 8px;
+  font-size: 16px;
+}
+
+.search-box {
+  border-radius: 50px;
+  background-color: #212121;
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  margin-top: -1px;
+  padding: 11px 19px;
+}
+
+.search-placeholder {
+  color: rgba(255, 255, 255, 0.23);
+  font-weight: 400;
+}
+
+.search-icon {
+  color: #fff;
+  font-family: Font Awesome 5 Free, -apple-system, Roboto, Helvetica, sans-serif;
+  font-weight: 900;
+  align-self: start;
+}
+
+.sub-nav {
+  background-color: #fff;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.25);
+  width: 100%;
+}
+
+.sub-nav-content {
+  display: flex;
+  width: 100%;
+  max-width: 1024px;
+  justify-content: flex-start;
+  margin: 0 auto;
+}
+
+.sub-nav-links {
+  display: flex;
+  gap: 40px;
+  padding-inline-start: 0;
+  font-size: 14px;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.featured-content .vid-sched {
+  margin-top: 25px;
+  width: 100%;
+  /*max-width: 1042px;*/
+  margin: 0px auto;
+}
+
+.featured-grid {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 0;
+  width: 100%;
+  max-width: 1042px;
+  margin: 20px auto; /* Center the grid on the page */
+  gap: 0px; /* Space between the image and side features */
+  justify-content: center;
+}
+
+/* Main feature article (the image) */
+.main-feature {
+  flex: 2; /* Takes up two-thirds of the available space */
+  margin: 0;
+}
+
+/* Main feature image */
+.main-feature-img {
+  width: 100%;
+  height: auto; /* Maintain aspect ratio */
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+/* Side feature articles */
+.side-features {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+/* Side feature content */
+.side-features-content {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Individual feature items */
+.feature-item {
+  background-color: #101010;
+  color: #fff;
+  padding: 21.5px;
+}
+
+.feature-item:last-child {
+  margin-bottom: 0;
+}
+
+/* Highlight feature with special background */
+.highlight-feature {
+  background-color: #b1945a;
+}
+
+/* Feature date styling */
+.feature-date {
+  font-size: 12px;
+  font-weight: 400;
+  margin-bottom: 8px;
+}
+
+/* Feature title styling */
+.feature-title {
+  font-size: 20px;
+  font-weight: 700;
+  margin-top: 4px;
+}
+
+.highlight-feature .feature-title {
+  color: #fff;
+}
+
+.team-logos {
+  background-color: #fff;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.25);
+  display: flex;
+  width: 100%;
+  max-width: 987px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 30px;
+  margin-bottom: 20px;
+}
+
+.logo-grid {
+  display: flex;
+  width: 1042px;
+  max-width: 100%;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.team-logo {
+  aspect-ratio: 1.12;
+  object-fit: contain;
+  object-position: center;
+  width: 105px;
+  max-width: 100%;
+  padding: 0 10px;
+}
+
+.section-parent {
+  max-width: 440px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.section-header {
+  display: flex;
+  align-items: center; /* Align content vertically */
+  justify-content: space-between; /* Evenly space out the accent and text */
+  width: 100%;
+  max-width: 440px; /* Ensure it's constrained within 440px */
+  color: #fff;
+  font: 700 14px Montserrat, sans-serif;
+  background-color: #000;
+  padding: 10px; /* Padding around the content */
+  box-sizing: border-box; /* Ensure padding doesn’t increase width */
+  overflow: hidden; /* Prevent any overflow */
+}
+
+.header-accent {
+  width: 10px;
+  height: 50px;
+  background-color: #b1945a;
+  margin-right: 10px;
+  flex-shrink: 0; /* Prevent shrinking */
+}
+
+.header-title {
+  font-size: 18px;
+  font-weight: 700;
+  margin: 0;
+  line-height: 1.2;
+  white-space: nowrap; /* Prevent wrapping */
+  overflow: hidden; /* Hide overflowing text */
+  text-overflow: ellipsis; /* Use ellipsis for overflow */
+  flex-grow: 1; /* Allow title to grow */
+}
+
+.category-nav {
+  background-color: #212121;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  max-width: 986px;
+  padding: 13px 28px;
+  font: 400 12px Montserrat, sans-serif;
+  gap: 0;
+}
+
+.category-nav a {
+  color: #fff;
+  text-decoration: none;
+  margin-right: 55px;
+  padding: 0;
+}
+
+/* Weekly Report */
+
+/* Container styling with max-width */
+.wkly-container {
+  max-width: 1047px;
+  margin: 0 auto; /* Center the content */
+  padding: 0px 4px 0px 2px; /* Add some padding */
+  box-sizing: border-box;
+}
+
+.image-text-wrapper {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 30px 20px 30px 10px;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.25);
+  background-color: #fff;
+}
+
+/* Image container */
+.image-container {
+  width: 25%; /* 1/4 of the total width */
+  margin-right: 25px; /* Add some space between image and text */
+}
+
+.image-container img {
+  width: 90%; /* Make image responsive */
+  height: auto;
+  padding: 0 0 0 17px;
+}
+
+/* Text container */
+.text-container {
+  width: 75%; /* 3/4 of the total width */
+  overflow: hidden; /* Hide overflow */
+  position: relative;
+}
+
+.text-container p {
+  margin: 0;
+  max-height: 400px; /* Set a max height for the text */
+  overflow-y: auto; /* Add scroll if text overflows */
+  padding-right: 10px; /* Prevent scrollbar overlap */
+  box-sizing: border-box;
+}
+
+/*News Grid */
+
+.news-grid {
+  background-color: #fff;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.25);
+  width: 100%;
+  max-width: 986px;
+  padding: 25px 28px 37px;
+}
+
+.news-row {
+  gap: 20px;
+  display: flex;
+}
+
+.news-item {
+  display: flex;
+  flex-direction: column;
+  line-height: normal;
+  width: 33%;
+  margin-left: 0;
+}
+
+.news-content {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  font-family: Montserrat, sans-serif;
+  color: #000;
+  font-weight: 700;
+}
+
+.news-image {
+  aspect-ratio: 1.48;
+  object-fit: contain;
+  object-position: center;
+  width: 100%;
+}
+
+.news-tag {
+  border-radius: 5px 0 5px 0px;
+  background-color: #b1945a;
+  color: #fff;
+  align-self: start;
+  display: flex;
+  margin: 16px 0 5px 0;
+  gap: 7px;
+  font-size: 16px;
+  padding: 6px 13px 6px;
+}
+
+.news-title {
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 0.96px;
+  margin-top: 15px;
+}
+
+.news-summary {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 14px;
+  letter-spacing: 0.72px;
+  align-self: start;
+  margin-top: 22px;
+}
+
+.vid-sched {
+  margin-top: 16px;
+  width: 100%;
+  max-width: 1042px;
+}
+
+.video-schedule-wrapper {
+  display: flex;
+  /*gap: 20px;*/
+  justify-content: space-between;
+}
+
+.video-container {
+  flex: 2;
+  display: flex;
+  flex-direction: column; /* Stack on small screens */
+  gap: 20px; /* Adjust the gap between video and schedule */
+}
+
+/* Video Player */
+.video-player {
+  width: 100%; /* Full width of the container */
+  /*max-width: 100%;*/
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.video-player iframe {
+  width: 100%; /* Makes iframe scale based on the container */
+  max-width: 682px;
+  max-height: 379px;
+}
+
+.video-thumbnail {
+  aspect-ratio: 1.76;
+  object-fit: contain;
+  object-position: center;
+  width: 100%;
+}
+
+.video-info {
+  background-color: #101010;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px; /* Reduced padding for smaller screens */
+}
+
+.video-meta {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  text-align: center;
+}
+
+.video-date {
+  color: #b1945a;
+  font-size: 12px;
+  align-self: center;
+}
+
+.video-title {
+  color: #fff;
+  font-size: 20px;
+  margin-top: 9px;
+}
+
+.schedule {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  line-height: normal;
+  width: 100%; /* Make it full width on small screens */
+  margin: 0 0 0 20px; /* Remove margins for small screens */
+}
+
+.header-content {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  font: 12px Montserrat, sans-serif;
+  max-width: 1042px;
+}
+
+.pl-header {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  color: #fff;
+  font-weight: 700;
+  margin-bottom: 0;
+}
+
+.pl-accent {
+  background-color: #b1945a;
+  width: 10px;
+  height: 48px;
+}
+
+.pl-title {
+  background-color: #101010;
+  flex-grow: 1;
+  padding: 15px 18px;
+  margin: 0;
+  display: inline-block;
+}
+
+.schedule-list {
+  background-color: #fff;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.25);
+  color: #000;
+  font-weight: 400;
+  line-height: 24.75px;
+  padding: 13px 28px 9px;
+  margin-top: 0;
+}
+
+/* Footer background spans full width */
+.footer {
+  background-color: #101010;
+  width: 100%;
+  padding: 15px 0; /* Only top/bottom padding for the outer footer */
+  margin-top: 25px;
+}
+
+/* Footer content stays within the page width */
+.footer-container {
+  max-width: 1042px;
+  margin: 0 auto; /* Centers the content */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 0 20px; /* Add horizontal padding inside the content */
+  color: #fff;
+  font: 400 12px Montserrat, sans-serif;
+}
+
+.footer-nav {
+  display: flex;
+  align-items: center;
+  gap: 27px;
+}
+
+.footer-logo {
+  aspect-ratio: 1.68;
+  object-fit: contain;
+  object-position: center;
+  width: 89px;
+}
+
+.footer-link {
+  color: #fff;
+  text-decoration: none;
+}
+
+.copyright {
+  margin: auto 0;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (min-width: 1042px) {
+  .section-header {
+    max-width: 1042px; /* Fixes the max width for larger screens */
+    margin: 0 auto; /* Centers the content on larger screens */
+  }
+}
+
+@media (max-width: 1024px) {
+  .news-item {
+    width: 100%;
+  }
+
+  .featured-grid {
+    display: block;
+  }
+}
+
+@media (max-width: 991px) {
+  .top-bar {
+    padding: 11px 20px;
+  }
+
+  .top-bar-content {
+    max-width: 100%;
+  }
+
+  /*.search-box {
+    white-space: initial;
+  }*/
+
+  .sub-nav {
+    padding: 11px 20px;
+  }
+
+  .featured-content .vid-sched {
+    max-width: 100%;
+  }
+
+  .featured-grid {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    display: block;
+  }
+
+  .main-feature {
+    width: 100%;
+  }
+
+  .main-feature-img {
+    max-width: 100%;
+  }
+
+  .side-features {
+    width: 100%;
+  }
+
+  .feature-item {
+    padding: 35px 20px;
+  }
+
+  .team-logos {
+    max-width: 100%;
+    padding: 16px 0px;
+  }
+
+  .section-header {
+    max-width: 100%;
+  }
+
+  .header-title {
+    padding: 12px 20px;
+  }
+
+  .category-nav {
+    max-width: 100%;
+    padding: 13px 20px;
+  }
+
+  .news-grid {
+    max-width: 100%;
+    padding: 25px 20px 77px;
+  }
+
+  .news-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+  }
+
+  .news-item {
+    width: 100%;
+    margin-top: 40px;
+  }
+
+  .news-tag {
+    white-space: initial;
+  }
+
+  .news-title {
+    margin-right: 10px;
+  }
+
+  .featured-content .vid-sched {
+    max-width: 100%;
+  }
+
+  .video-container {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+  }
+
+  .video-player {
+    max-width: 100%;
+    margin-top: 23px;
+  }
+
+  .video-thumbnail {
+    max-width: 100%;
+  }
+
+  .video-info {
+    max-width: 100%;
+    padding: 40px 20px;
+  }
+
+  .schedule {
+    width: 100%;
+  }
+
+  .schedule-content {
+    margin-top: 22px;
+  }
+
+  .schedule-title {
+    padding: 15px 20px;
+  }
+
+  .schedule-list {
+    padding: 21px 20px 38px;
+  }
+
+  .footer {
+    max-width: 100%;
+    margin-top: 40px;
+    padding: 15px 20px;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .sports-news-container {
+    max-width: 440px;
+    width: 100%;
+    margin: 0 auto;
+    box-sizing: border-box;
+  }
+
+  /* General container div styles */
+  .container {
+      width: 100%;
+      max-width: 440px; /* Container width of 440px */
+      margin: 0 auto; /* Center the container horizontally */
+  }
+
+  /* Ensure elements stack vertically */
+  .top-bar, 
+  .sub-nav, 
+  .section-header, 
+  .news-grid, 
+  .schedule, 
+  .footer,
+  .category-nav {
+      display: block;
+      width: 100%;
+      max-width: 440px;
+      margin: 0 auto; /* Centering the containers */
+      padding: 11px 0;
+  }
+
+  .sub-nav-links {
+    display: flex;
+    gap: 30px;
+    padding-inline-start: 0;
+    font-size: 14px;
+    padding: 0 30px;
+  }
+
+  .category-nav {
+    padding: 13px 0px;
+  }
+
+  .schedule-title {
+    padding: 12px 20px;
+}
+
+  .featured-content,
+  .team-logos,
+  .video-player {
+      display: block;
+      width: 100%;
+      max-width: 440px;
+      margin: 15px auto; /* Centering the containers */
+  }
+
+  .vid-sched {
+      display: block;
+      width: 100%;
+      max-width: 440px;
+      margin: 0px auto; /* Centering the containers */
+  }
+
+  /* Adjust any grid or flexbox layouts to stack */
+  .featured-grid, 
+  .news-row {
+      flex-direction: column; /* Stack vertically */
+      align-items: stretch;   /* Make sure the items stretch to the container width */
+      align-items: center;
+      max-width: 440px;
+  }
+
+  .main-feature-img {
+    width: 100%; /* Image takes full width */
+    height: auto; /* Maintains aspect ratio */
+  }
+
+  .video-container {
+    width: 100%;
+  }
+
+  /* If you have columns, make sure they take full width when stacked */
+  .main-feature, 
+  .side-features, 
+  .news-item, 
+  .schedule {
+      width: 100%;
+      /*max-width: 440px;*/
+      
+  }
+
+  /* Adjust the search box */
+  .search-box {
+    display: none; /* Hide search box */
+  }
+
+  /* Any buttons or elements like the hamburger menu */
+  .hamburger-menu {
+    display: block; /* Show hamburger menu at 768px and below */
+  }
+
+  .nav-links, .search-box {
+    display: none; /* Hide the original nav links and search box */
+  }
+
+  .sports-news-container {
+    display: block;
+  }
+
+  .nav-links {
+    justify-content: center;
+    margin-top: 10px;
+  }
+
+  .main-feature {
+    width: 100%;
+  }
+
+  .news-item {
+    width: 100%;
+  }
+
+  .schedule {
+    /*display: none;*/
+    margin-left: 0;
+  }
+
+  .schedule-content {
+    margin-top: 0;
+  }
+
+  .featured-grid {
+    display: block;
+  }
+
+  .video-schedule-wrapper {
+    flex-direction: column;
+  }
+
+  .video-info {
+    max-width: 100%;
+    padding: 20px 20px;
+  }
+
+  .footer {
+    padding: 15px 0;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-nav {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  .footer-logo {
+    margin-bottom: 15px;
+  }
+
+}
+
+
+@media (max-width: 300px) {
+  .search-box {
+    padding: 5px; /* Reduce padding */
+    width: 100%; /* Ensure it takes the full width */
+  }
+
+  .search-box input {
+    width: 100%; /* Make the input field full width */
+    padding: 6px; /* Adjust padding */
+  }
+
+  .featured-content {
+    padding: 0; /* Add padding for smaller screens */
+  }
+
+  .image-text-wrapper {
+    padding: 20px 7px 20px 5px
+  }
+
+  .image-container {
+    width: 19%;
+    margin-right: 0;
+  }
+
+  .image-container img {
+    width: 70%;
+    height: auto;
+    padding: 0 0 0 3px;
+  }
+
+  .text-container {
+    width: 80%;
+  }
+
+  .video-container {
+    flex-direction: column; /* Stack the schedule under the video */
+    height: auto;
+    width: 100%;
+    border: none;
+  }
+
+  .schedule {
+    margin-top: 20px; /* Add margin between video and schedule */
+    width: 100%; /* Full width */
+  }
+
+  .video-info {
+    padding: 15px; /* Reduce padding for small screens */
+  }
+
+  .video-player iframe {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16/9; /* Maintain aspect ratio */
+  }
+
+  .schedule-title {
+    padding: 10px 15px;
+  }
+
+  .schedule-list {
+    padding: 10px 15px;
+  }
+
+  .footer {
+    display: block;
+      width: 100%;
+      max-width: 240px;
+      margin: 0px auto;
+  }
+
+}
+
+
+
+
