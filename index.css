@@ -17,6 +17,7 @@ a:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
+  max-width: 1860px;
 }
 
 .top-bar {
@@ -458,7 +459,7 @@ ul {
   color: #fff;
   align-self: start;
   display: flex;
-  margin: 16px 0 5px 0;
+  margin: 7px 0 5px 0;
   gap: 7px;
   font-size: 16px;
   padding: 6px 13px 6px;
@@ -468,7 +469,7 @@ ul {
   font-size: 16px;
   line-height: 20px;
   letter-spacing: 0.96px;
-  margin-top: 15px;
+  margin-top: 5px;
 }
 
 .news-summary {
@@ -477,7 +478,7 @@ ul {
   line-height: 14px;
   letter-spacing: 0.72px;
   align-self: start;
-  margin-top: 22px;
+  margin-top: 12px;
 }
 
 .vid-sched {
@@ -745,7 +746,7 @@ ul {
 
   .news-item {
     width: 100%;
-    margin-top: 40px;
+    margin-top: 20px;
   }
 
   .news-tag {
@@ -922,7 +923,7 @@ ul {
   }
 
   .news-item {
-    width: 100%;
+    width: 90%;
   }
 
   .schedule {
@@ -1012,7 +1013,6 @@ ul {
   }
 
   .schedule {
-    margin-top: 20px; /* Add margin between video and schedule */
     width: 100%; /* Full width */
   }
 
@@ -1036,9 +1036,9 @@ ul {
 
   .footer {
     display: block;
-      width: 100%;
-      max-width: 240px;
-      margin: 0px auto;
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
   }
 
 }

@@ -47,7 +47,7 @@ h1.guide {
 }
 
 .games {
-    padding: 8rem 8rem 2rem 0;
+    padding: 5rem 8rem 2rem 0;
     margin: 10px auto;
     align-items: left;
 }
@@ -86,7 +86,7 @@ ol > li::marker {
 /* Picks Table Form */
 
 .weekTable {
-  margin: 70px 0;
+  margin: 2px 0;
 }
 
 table {
@@ -95,32 +95,33 @@ table {
     margin: 0px auto 3px auto;
     /*overflow-y: scroll;*/
     /*position: static;*/
-    width: 90%;
+    width: 100%;
+    border-collapse: collapse;
   }
 
 thead th {
     background: #b1945a;
-    color: #261b04;
+    color: #ffffff;
     font-family: 'Lato', sans-serif;
+    font-size: 16px;
     font-weight: 900;
     letter-spacing: 1px;
     text-transform: uppercase;
     border: 1px solid #ad7c1c;
+    padding: 10px;
   }
 
   tr {
     background: #f4f7f8;
-    border-bottom: 1px solid #FFF;
-    margin-bottom: 5px;
+    border-bottom: 1px solid #b1c1c7;    
   }
   
-  th, td {
+  td {
     font-family: 'Lato', sans-serif;
     font-weight: 400;
     padding: 10px 10px;
     text-align: center;
     font-size: 16px;
-    border: solid 1px rgb(255, 255, 255);
   }
 
 /* form */
@@ -181,6 +182,11 @@ thead th {
     .featured-grid {
       display: block;
     }
+
+    .games {
+      padding: 4rem 8rem 2rem 0;
+    }
+
   }
   
   @media (max-width: 991px) {
@@ -323,7 +329,7 @@ thead th {
             width: 100%;
         }
         form {
-            width: 98%;
+            width: 100%;
             background-position:left;
         }
         h1{
@@ -336,6 +342,15 @@ thead th {
       width: 100%;
       margin: 0 auto;
       box-sizing: border-box;
+    }
+
+    td {
+      font-size: 10px;
+      padding: 10px 0;
+    }
+
+    .weekTable {
+      margin: 2px 0;
     }
   
     /* General container div styles */
@@ -494,6 +509,49 @@ thead th {
     }
   
   }
+
+  @media (max-width: 440px) {
+
+    .games {
+      padding: 2rem 1rem 1rem 1rem;
+    }
+    
+    input[type="text"],
+    select {
+    width: 60%;
+    padding: 3px 12px 3px 5px;
+    margin: 0 0 0 5px;
+    }
+
+    thead th {
+      font-size: 12px;
+      letter-spacing: 0;
+      padding: 5px 0;
+    }
+
+    table {
+      border-spacing: 0;
+    }
+
+    .box p {
+      padding: 0 30px;
+    }
+
+    .box ol {
+      padding: 0 40px;
+    }
+
+    label {
+      margin: 5px 1px 5px 1px;;
+    }
+
+    .submitButton {
+      height:35px;
+      width: 65px;
+      font-size: medium;
+    }
+
+  }
   
   
   @media (max-width: 300px) {
@@ -529,6 +587,10 @@ thead th {
     .text-container {
       width: 80%;
     }
+
+    .news-item {
+      width: 90%;
+    }
   
     .video-container {
       flex-direction: column; /* Stack the schedule under the video */
@@ -558,13 +620,6 @@ thead th {
   
     .schedule-list {
       padding: 10px 15px;
-    }
-  
-    .footer {
-      display: block;
-        width: 100%;
-        max-width: 240px;
-        margin: 0px auto;
     }
   
   }
