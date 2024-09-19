@@ -83,11 +83,11 @@
                   <tr>
                       <td>
                         <label for="FirstName">First Name:</label>
-                        <input type="text" id="firstName" name="FirstName" required>
+                        <input type="text" id="firstName" name="FirstName" oninput="checkNames()" required>
                       </td>
                       <td>
                         <label for="LastName">Last Name:</label>
-                        <input type="text" id="lastName" name="LastName" required>
+                        <input type="text" id="lastName" name="LastName" oninput="checkNames()" required>
                       </td>
                   </tr>
                 </tbody>    
@@ -399,7 +399,7 @@
                             <td>Survivor Selection:</td>
                             <td colspan="3"></td>
                             <td colspan="1">
-                                <select name="Survivor">
+                                <select id="survivor" name="Survivor" disabled>
                                     <option style="display:none;"></option>
                                     <option value="Arizona">Arizona Cardinals</option>
                                     <option value="Atlanta">Atlanta Falcons</option>
@@ -438,17 +438,19 @@
                         </tr>
                         <tr>
                             <td><label for="comments">Insight and Tom-Foolery:</label></td>
-                            <td colspan="3">
-                                <textarea id="comments" name="comments" rows="5" cols="80" placeholder="And begin..."></textarea>
+                            <td colspan="4">
+                                <textarea id="comments" name="comments" rows="5" cols="90" placeholder="And begin..."></textarea>
                             </td>
-                            <td></td>
+                            
                         </tr>
 
                         <tr>
-                            <td colspan="4"></td>
+                            <td colspan="2"></td>
                             <td>
                                 <input class="submitButton" type="submit" value="submit" />
                             </td>
+                            <td></td>
+                            <td></td>
                         </tr>
 
                         </tbody>
@@ -507,10 +509,21 @@
   </section>
 
   <script>
+    function checkNames() {
+      var firstName = document.getElementById("firstName").value;
+      var lastName = document.getElementById("lastName").value;
+      
+      google.script.run.withSuccessHandler(function(isValid) {
+        document.getElementById("survivor").disabled = !isValid;
+      }).checkName(firstName, lastName);
+    }
+  </script>
+
+  <script>
     function toggleMenu() {
   var menuContent = document.getElementById("menu-content");
   menuContent.classList.toggle("menu-open");
-}
+  }
   </script>
 
 <script>
@@ -525,7 +538,7 @@ formData.forEach(function (value, key) {
   formObject[key] = value;
 });
 
-fetch('https://script.google.com/macros/s/AKfycbwEHGeqe_5v0ZI6wqAIcKaZx_sfY6GF7pEbYn7ag_xefi_XJZTk7URXqurqW8eIrPg/exec', {
+fetch('https://script.google.com/macros/s/AKfycbxT1EZHC_nmWHxg33615A81vnmOwvJdpoEktHBkc3t09poyjf7uhPaDnc20Sy3XPok/exec', {
   method: 'POST',
   headers: {
       'Content-Type': 'application/x-www-form-urlencoded',
