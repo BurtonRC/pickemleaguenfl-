@@ -82,12 +82,12 @@
                 <tbody>
                   <tr>
                       <td>
-                        <label for="FirstName">First Name:</label>
-                        <input type="text" id="firstName" name="FirstName" oninput="checkNames()" required>
+                        <label for="firstName">First Name:</label>
+                        <input type="text" id="firstName" name="firstName" oninput="checkNames()" required>
                       </td>
                       <td>
-                        <label for="LastName">Last Name:</label>
-                        <input type="text" id="lastName" name="LastName" oninput="checkNames()" required>
+                        <label for="lastName">Last Name:</label>
+                        <input type="text" id="lastName" name="lastName" oninput="checkNames()" required>
                       </td>
                   </tr>
                 </tbody>    
@@ -434,7 +434,7 @@
                                     <option value="Tennessee">Tennessee Titans</option>
                                     <option value="Washington">Washington Commanders</option>
                                 </select>
-                            </td>
+                            
                         </tr>
                         <tr>
                             <td><label for="comments">Insight and Tom-Foolery:</label></td>
@@ -508,6 +508,7 @@
     </footer>
   </section>
 
+  
   <script>
     function checkNames() {
       var firstName = document.getElementById("firstName").value;
@@ -538,7 +539,7 @@ formData.forEach(function (value, key) {
   formObject[key] = value;
 });
 
-fetch('https://script.google.com/macros/s/AKfycbxT1EZHC_nmWHxg33615A81vnmOwvJdpoEktHBkc3t09poyjf7uhPaDnc20Sy3XPok/exec', {
+fetch('https://script.google.com/macros/s/AKfycbyeQaY0CB5da3h0HWLsSnDc-_e8hyDT0G5uOlI8L9ZbO-DTEOJRVtWi78ofdYiBAss/exec', {
   method: 'POST',
   headers: {
       'Content-Type': 'application/x-www-form-urlencoded',
