@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="picksTable.css">
+  <link rel="stylesheet" type="text/css" href="index.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+
+  <title>JW's Pick'em League</title>
+</head>
+<body>
+  
+  <section class="sports-news-container">
+    <header class="top-bar">
+        <div class="container">
+          <div class="top-bar-content">
+            <a href="index.html"><img src="./img/pickem_logo.png" alt="JW's Pick'em League Logo" class="logo" /></a>
+          
+              <nav class="nav-links">
+                <a href="picks.html" class="nav-link">This Week's Picks</a>
+                <a href="leaderboard.html" class="nav-link">PL Leaderboard</a>
+              </nav>
+
+            <!-- Hamburger Icon -->
+            <div class="hamburger-menu">
+              <div class="hamburger-icon" onclick="toggleMenu()">☰</div>
+
+                <!-- Hidden Menu -->
+                <div id="menu-content" class="menu-content">
+                    <!-- Close button (X) inside the menu -->
+                    <div class="close-icon" onclick="toggleMenu()">✖</div>
+
+                    <!-- Navigation links inside the mobile menu -->
+                    <nav class="mobile-nav-links">
+                      <a href="picks.html">This Week's Picks</a>
+                      <a href="leaderboard.html">PL Leaderboard</a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+      </div>
+    </header>
+  
+    <nav class="sub-nav">
+      <div class="sub-nav-content">
+        <ul class="sub-nav-links">
+          <li><a href="#">Weekly Reports</a></li>
+          <li><a href="#">Game Results</a></li>
+          <li><a href="#">League Tables</a></li>
+        </ul>
+      </div>
+    </nav>
+  
+<div class="picksHero">
+    <div class="plimage"></div>
+</div>
+  
+<div class="hdr-main" style="max-width: 860px;">
+  <p style="font-size: 1em; font-weight: bold; color: #b1945a; margin: 5px 0;">Week 02</p>
+  <h1 class="guide">Leaderboard</h1>
+</div>
+       
+        <!-- Main content with the table -->
+        <div class="box-pl">
+          
+            <table class="tableresults">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Points</th>
+                  <th>DB</th>
+                  <th>PS</th>
+                </tr>
+              </thead>
+              <tbody id="table-body">
+                <!-- Table data will be populated here dynamically -->
+              </tbody>
+            </table>
+          
+        </div>
+        
+      </div>
+
+   
+<!--<section class="news-grid">
+      <div class="container">
+      <div class="news-row">
+        <article class="news-item">
+          <div class="news-content">
+            <img src="./img/news01.jpg" alt="Week 2 predictions" class="news-image" />
+            <div class="news-tag">News</div>
+            <time datetime="2024-09-05" class="feature-date">Sept 5, 2024</time>
+            <h3 class="news-title">Week 2 bold predictions: upsets, breakout players, and more!</h3>
+            <p class="news-summary">NFL news roundup: Latest league updates from Friday, Sept. 13</p>
+          </div>
+        </article>
+        <article class="news-item">
+          <div class="news-content">
+            <img src="./img/news02.jpg" alt="Christian McCaffrey injury update" class="news-image" />
+            <div class="news-tag">News</div>
+            <time datetime="2024-09-05" class="feature-date">Sept 5, 2024</time>
+            <h3 class="news-title">49ers RB Christian McCaffrey (calf/Achilles) ruled out for...</h3>
+            <p class="news-summary">NFL news roundup: Latest league updates from Friday, Sept. 13</p>
+          </div>
+        </article>
+        <article class="news-item">
+          <div class="news-content">
+            <img src="./img/news03.jpg" alt="NFL news roundup" class="news-image" />
+            <div class="news-tag">News</div>
+            <time datetime="2024-09-05" class="feature-date">Sept 5, 2024</time>
+            <h3 class="news-title">NFL news roundup: Latest league updates from Friday, Sept. 13</h3>
+            <p class="news-summary">NFL news roundup: Latest league updates from Friday, Sept. 13</p>
+          </div>
+        </article>
+      </div>
+      </div>
+    </section>--> 
+  
+    <footer class="footer">
+      <div class="footer-container">
+        <nav class="footer-nav">
+          <a href="index.html"><img src="./img/pickem_logo.png" alt="Footer logo" class="footer-logo" /></a>
+          <a href="picks.html" class="footer-link">This Week's Picks</a>
+          <a href="#" class="footer-link">PL Leaderboard</a>
+          <a href="#" class="footer-link">The Weekly Reports</a>
+        </nav>
+        <p class="copyright">© JW's Pick'em League 2024</p>
+      </div>
+    </footer>
+  </section>
+
+
+  <script>
+    function toggleMenu() {
+  var menuContent = document.getElementById("menu-content");
+  menuContent.classList.toggle("menu-open");
+  }
+  </script>
+
+<script>
+  // URL of the deployed Apps Script Web App
+  const SHEET_URL = 'https://script.google.com/macros/s/AKfycby12Wwp4vVLYUbMMOt7PYrsx5gGluVbh1DcvjWEP-OKT-ThqL9GhWUfgUGbOx9NBss/exec';
+
+  // Function to fetch data and populate the table
+  function fetchTableData() {
+    fetch(SHEET_URL)
+      .then(response => response.json())
+      .then(data => {
+        const tableBody = document.getElementById('table-body');
+        tableBody.innerHTML = ''; // Clear any existing table rows
+        
+        data.forEach(row => {
+          let tableRow = document.createElement('tr');
+          
+          // Create table cells for each value (Name, Points, DB, PS)
+          row.forEach(cellData => {
+            let cell = document.createElement('td');
+            cell.textContent = cellData;
+            tableRow.appendChild(cell);
+          });
+
+          // Append the row to the table body
+          tableBody.appendChild(tableRow);
+        });
+      })
+      .catch(error => {
+        console.error('Error fetching data:', error);
+      });
+  }
+
+  // Fetch data when the page loads
+  window.onload = fetchTableData;
+</script>
+
+</body>
+</html>
