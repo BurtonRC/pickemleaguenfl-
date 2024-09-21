@@ -89,9 +89,20 @@ a:hover {
 }
 
 /* Hidden menu content */
+
+.logo-hamburger {
+  aspect-ratio: 1.69;
+  object-fit: contain;
+  object-position: center;
+  width: 127px;
+  margin-bottom: 20px;
+  max-width: 100%;
+}
+
 .menu-content {
   display: none; /* Hidden by default */
-  background-color: white;
+  background-color: #000;
+  color: #fff;
   position: fixed;
   top: 0;
   right: 0;
@@ -122,10 +133,11 @@ a:hover {
 
 .mobile-nav-links a {
   display: block;
-  text-align: center;
-  padding: 15px;
+  padding: 15px 0;
   font-size: 18px;
   width: 100%;
+  color: #fff;
+  text-align: center;
 }
 
 .mobile-search-box {
@@ -730,7 +742,11 @@ ul {
 
   .category-nav {
     max-width: 100%;
-    padding: 13px 20px;
+    padding: 13px 0px;
+  }
+
+  .image-text-wrapper {
+     padding: 30px 5px 30px 5px; 
   }
 
   .news-grid {
@@ -860,6 +876,10 @@ ul {
       margin: 15px auto; /* Centering the containers */
   }
 
+  .wkly-container {
+    padding: 0;
+  }
+
   .vid-sched {
       display: block;
       width: 100%;
@@ -966,6 +986,24 @@ ul {
 
   .footer-logo {
     margin-bottom: 15px;
+  }
+
+}
+
+@media (max-width: 440px) {
+  .text-container {
+    font-size: 14px;
+    width: 100%;
+  }
+
+  .image-container img {
+    width: 70%;
+    height: auto;
+    padding: 0 0 0 3px;
+  }
+
+  .image-container {
+    margin-right: 0;
   }
 
 }
