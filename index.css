@@ -135,9 +135,15 @@ a:hover {
   display: block;
   padding: 15px 0;
   font-size: 18px;
-  width: 100%;
+  width: 300px;
   color: #fff;
   text-align: center;
+}
+
+.mobile-nav-links a:active {
+  color: #000000;
+  background-color: #b1945a;
+  margin: 0 10px;
 }
 
 .mobile-search-box {
