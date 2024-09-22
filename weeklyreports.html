@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="weeklyReports.css">
   <link rel="stylesheet" type="text/css" href="picksTable.css">
   <link rel="stylesheet" type="text/css" href="index.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
@@ -48,37 +49,49 @@
     </header>
   
 <div class="picksHero">
-    <div class="plimage"></div>
+    <div class="wrimage"></div>
+</div>   
+<p></p>
+<div class="hdr-main" style="max-width: 1042px;">
+  <h1 class="guide">Weekly Reports Archive</h1>
 </div>
-  
-<div class="hdr-main" style="max-width: 860px;">
-  <p style="font-size: 1em; font-weight: bold; color: #b1945a; margin: 5px 0;">Week 02</p>
-  <h1 class="guide">Leaderboard</h1>
-</div>
-       
-        <!-- Main content with the table -->
-        <div class="box-pl">
-          
-            <table class="tableresults">
-              <thead>
-                <tr>
-                  <th>Name</th>
-                  <th>Points</th>
-                  <th>DB</th>
-                  <th>PS</th>
-                </tr>
-              </thead>
-              <tbody id="table-body">
-                <!-- Table data will be populated here dynamically -->
-              </tbody>
-            </table>
-          
-        </div>
-        
-      </div>
 
-   
-<!--<section class="news-grid">
+<br>
+
+<div class="selectors">
+  <div class="form-group">
+    <label id="labelYear" for="year">Select Year:</label>
+    <select id="year" class="custom-select">
+      <option value="">--Select Year--</option>
+      <option value="2023" disabled>2023</option>
+      <option value="2024">2024</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label id="labelWeek" for="week">Select Week:</label>
+    <select id="week" class="custom-select">
+      <option value="">--Select Week--</option>
+      <option value="1">Week 1</option>
+      <option value="2">Week 2</option>
+      <option value="3">Week 3</option>
+      <!-- Continue up to Week 52 -->
+    </select>
+  </div>
+</div>
+
+
+
+
+
+<div>
+  <div id="wkly-content">
+      <!-- Content will be displayed here -->
+  </div>
+</div>
+
+<br>
+
+<section class="news-grid">
       <div class="container">
       <div class="news-row">
         <article class="news-item">
@@ -110,7 +123,7 @@
         </article>
       </div>
       </div>
-    </section>--> 
+    </section> 
   
     <footer class="footer">
       <div class="footer-container">
@@ -126,6 +139,8 @@
   </section>
 
 
+  <!-- Hamburger toggle -->
+  
   <script>
     function toggleMenu() {
   var menuContent = document.getElementById("menu-content");
@@ -133,40 +148,57 @@
   }
   </script>
 
+<!-- Year and Week selection fetches content -->
+
 <script>
-  // URL of the deployed Apps Script Web App
-  const SHEET_URL = 'https://script.google.com/macros/s/AKfycby12Wwp4vVLYUbMMOt7PYrsx5gGluVbh1DcvjWEP-OKT-ThqL9GhWUfgUGbOx9NBss/exec';
+document.addEventListener('DOMContentLoaded', function() {
+    const yearSelect = document.getElementById('year');
+    const weekSelect = document.getElementById('week');
+    const contentDiv = document.getElementById('wkly-content');
 
-  // Function to fetch data and populate the table
-  function fetchTableData() {
-    fetch(SHEET_URL)
-      .then(response => response.json())
-      .then(data => {
-        const tableBody = document.getElementById('table-body');
-        tableBody.innerHTML = ''; // Clear any existing table rows
-        
-        data.forEach(row => {
-          let tableRow = document.createElement('tr');
-          
-          // Create table cells for each value (Name, Points, DB, PS)
-          row.forEach(cellData => {
-            let cell = document.createElement('td');
-            cell.textContent = cellData;
-            tableRow.appendChild(cell);
-          });
+    if (yearSelect && weekSelect && contentDiv) {
+        function updateContent() {
+            const year = yearSelect.value;
+            const week = weekSelect.value;
 
-          // Append the row to the table body
-          tableBody.appendChild(tableRow);
+            if (year && week) {
+                fetchContent(year, week).then(content => {
+                    contentDiv.innerHTML = content; // Use innerHTML to render HTML content
+                    contentDiv.style.display = 'block';
+                }).catch(error => {
+                    console.error('Error fetching content:', error);
+                    contentDiv.textContent = 'Error loading content.';
+                    contentDiv.style.display = 'block';
+                });
+            } else {
+                contentDiv.style.display = 'none';
+            }
+        }
+
+        yearSelect.addEventListener('change', updateContent);
+        weekSelect.addEventListener('change', updateContent);
+    }
+});
+
+function fetchContent(year, week) {
+    return fetch(`./reports/${year}_week${week}.html`)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.text();
+        })
+        .catch(error => {
+            console.error('Error fetching content:', error);
+            return 'Error loading content.';
         });
-      })
-      .catch(error => {
-        console.error('Error fetching data:', error);
-      });
-  }
+}
 
-  // Fetch data when the page loads
-  window.onload = fetchTableData;
 </script>
+
+
+
+
 
 </body>
 </html>

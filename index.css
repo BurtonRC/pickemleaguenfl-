@@ -199,11 +199,15 @@ a:hover {
   margin: 0 auto;
 }
 
-.sub-nav-links {
+.sub-nav-links .greetings {
   display: flex;
   gap: 40px;
   padding-inline-start: 0;
   font-size: 14px;
+}
+
+.greetings {
+  margin: 7px 0 0 10px;
 }
 
 a {
@@ -430,6 +434,7 @@ ul {
   overflow-y: auto; /* Add scroll if text overflows */
   padding-right: 10px; /* Prevent scrollbar overlap */
   box-sizing: border-box;
+  line-height: 1.5;
 }
 
 /*News Grid */

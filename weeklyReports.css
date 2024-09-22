@@ -1,0 +1,31 @@
+.selectors {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start; /* Align items to the left */
+  width: 100%;
+  max-width: 1042px;
+}
+
+.form-group {
+  display: flex;
+  align-items: center;
+  margin-right: 20px; /* Adjust spacing between groups */
+}
+
+label {
+  margin-right: 10px; /* Adjust spacing between label and dropdown */
+  white-space: nowrap; /* Prevent label text from wrapping */
+}
+
+.custom-select {
+  flex: 1; /* Allow dropdown to take available space */
+  min-width: 150px; /* Ensure dropdowns have a minimum width */
+}
+
+#labelYear {
+  margin: 0 17px 0 10px;
+}
+
+#labelWeek {
+  margin: 0 5px 0 10px;
+}

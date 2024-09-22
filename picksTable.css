@@ -80,6 +80,33 @@
     background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 25%, rgb(0, 0, 0) 100%), url(img/gb_chicago_opt.jpg);
   }
 
+  .wrimage {
+    z-index: 0;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    position: relative;
+    top: 0px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-size: cover;
+    background-position: center center;
+    background-image: url(img/wkly_report.jpg);
+    background-repeat: no-repeat;
+    height: 27.5rem;
+  }
+
+  .wrimage:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 25%, rgb(0, 0, 0) 100%), url(img/wkly_report.jpg);
+  }
+
 h1.guide {
     font-size: 2.5rem;
     margin: 0;
@@ -215,7 +242,7 @@ thead th {
   -webkit-transform: translate3d(83%, -6%, 0); /* Vertial positioning */
      -moz-transform: translate3d(83%, -6%, 0);
           transform: translate3d(83%, -6%, 0);
-  background: #91b923; /* Green color when checked */
+  background: #aee516; /* Green color when checked */
   border: 1px solid #6d8d14;
   margin: -0.001em -0.01em; /* Ensure this matches the initial state */
 }
