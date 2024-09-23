@@ -685,6 +685,11 @@ ul {
 }
 
 @media (max-width: 1024px) {
+  
+  .team-logos {
+    padding: 16px 16px;
+  }
+  
   .news-item {
     width: 100%;
   }
@@ -738,6 +743,16 @@ ul {
     padding: 35px 20px;
   }
 
+  .logo-grid {
+    max-width: 90%;
+    gap: 10px;
+    margin-left: 22px;
+  }
+
+  .team-logo {
+    width: 85px;
+  }
+ 
   .team-logos {
     max-width: 100%;
     padding: 16px 0px;
@@ -1017,6 +1032,16 @@ ul {
     margin-right: 0;
   }
 
+  .team-logo {
+    width: 85px;
+  }
+
+  .logo-grid {
+    max-width: 85%;
+    gap: 0;
+    padding: 0 10px;
+  }
+
 }
 
 
@@ -1048,6 +1073,10 @@ ul {
     width: 70%;
     height: auto;
     padding: 0 0 0 3px;
+  }
+
+  .logo-grid {
+    padding: 0;
   }
 
   .text-container {
@@ -1091,7 +1120,3 @@ ul {
   }
 
 }
-
-
-
-
