@@ -149,6 +149,7 @@ ol > li::marker {
 
 .box p {
     margin: 16px 110px;
+    padding-right: 90px;
 }
 
 /* Picks Table Form */
