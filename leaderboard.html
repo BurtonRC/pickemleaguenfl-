@@ -110,7 +110,22 @@
         </article>
       </div>
       </div>
-    </section>--> 
+    </section>-->
+
+    
+
+    <!--<div class="comment-box">
+      <h2>Leave a Comment</h2>
+      <form id="commentForm" method="post" action="https://script.google.com/macros/s/AKfycbwxOFWQRXSq23FLuh-DgOy_TNGlf5cev2p-oTbi-YD6V-6nVM8wBvUWd8yWnTexp28/exec">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required>
+          <label for="comment">Comment:</label>
+          <textarea id="comment" name="comment" required></textarea>
+          <button type="submit">Submit</button>
+      </form>
+    </div>-->
+  
+  <br><br>
   
     <footer class="footer">
       <div class="footer-container">
@@ -133,9 +148,11 @@
   }
   </script>
 
+<!--Leaderboard Data-->
+
 <script>
   // URL of the deployed Apps Script Web App
-  const SHEET_URL = 'https://script.google.com/macros/s/AKfycby12Wwp4vVLYUbMMOt7PYrsx5gGluVbh1DcvjWEP-OKT-ThqL9GhWUfgUGbOx9NBss/exec';
+  const SHEET_URL = 'https://script.google.com/macros/s/AKfycbxrr_Efn6sxux1o1T3ZuwAh0sOink-6W3PClteQZLPVSpGTLg70FWd0Q2eEFk3VFQE/exec';
 
   // Function to fetch data and populate the table
   function fetchTableData() {
@@ -167,6 +184,20 @@
   // Fetch data when the page loads
   window.onload = fetchTableData;
 </script>
+
+<!--Comment Box-->
+
+
+
+<script>
+document.getElementById('commentForm').addEventListener('submit', function(event) {
+      alert('Your comment has been submitted!');
+    });
+
+</script>
+
+
+<!--<script src="script.js"></script>>-->
 
 </body>
 </html>

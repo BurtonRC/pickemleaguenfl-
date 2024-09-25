@@ -331,7 +331,7 @@ thead th {
     }
   
     .hdr-main {
-      padding: 0 0 2rem 0;
+      padding: 0 0 2rem 0.5rem;
     }
 
     .featured-content .vid-sched {
@@ -496,7 +496,7 @@ thead th {
     }
 
     td {
-      font-size: 10px;
+      font-size: 16px;
       padding: 10px 4px;
     }
 
@@ -668,7 +668,8 @@ thead th {
   @media (max-width: 440px) {
 
     .hdr-main {
-      padding: 0 0 1rem 0;
+      padding: 0 0 1rem 1rem;
+      width: 90%;
     }
     
     input[type="text"],
@@ -689,6 +690,7 @@ thead th {
     }
 
     td {
+      font-size: 12px;
       padding: 10px 2px;
     }
 
