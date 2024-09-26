@@ -82,7 +82,7 @@
 
    <div class="box">
     <div class="weekTable">    
-      <form id="myForm" method="post" action="https://script.google.com/macros/s/AKfycbzG0GUwF3lYfbVD78vPSWVBuu_B0vGbRgWKQPdHWHWDii50Njtz9djvLhUUJtW9G7E/exec">
+      <form id="myForm" method="post" action="https://script.google.com/macros/s/AKfycbz2eKaKyCZIVmr2PBgf2H0OTU2bf-hqt888WU4kamLdLPIwD5ybmAlmMSt3UNb-boM/exec">
             <div>
             <table>
                 <tbody>
@@ -612,7 +612,7 @@
       formObject[key] = value;
     });
 
-    fetch('https://script.google.com/macros/s/AKfycbzG0GUwF3lYfbVD78vPSWVBuu_B0vGbRgWKQPdHWHWDii50Njtz9djvLhUUJtW9G7E/exec', {
+    fetch('https://script.google.com/macros/s/AKfycbz2eKaKyCZIVmr2PBgf2H0OTU2bf-hqt888WU4kamLdLPIwD5ybmAlmMSt3UNb-boM/exec', {
       method: 'post',
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded',
@@ -627,7 +627,6 @@
     })
     .then(data => {
       alert('Game selections were successful. ' + data);
-      form.reset(); // Clear the form after successful submission
     })
     .catch(error => {
       console.error('Error:', error);
@@ -635,15 +634,15 @@
   });
 </script>
 
-<!-- Clears form after submit 
+<!-- Clears form after submit--> 
 
 <script>
   document.getElementById('myForm').addEventListener('submit', function() {
     setTimeout(() => {
       this.reset(); // Reset the form after submission
-    }, 1000); // Adjust the delay as needed
+    }, 500); // Adjust the delay as needed
   });
-</script>-->
+</script>
 
 </body>
 </html>
