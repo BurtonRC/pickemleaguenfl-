@@ -603,36 +603,34 @@
 
 <script>
   document.getElementById('myForm').addEventListener('submit', function (event) {
-//event.preventDefault();
+    var form = document.getElementById('myForm');
+    var formData = new FormData(form);
 
-var form = document.getElementById('myForm');
-var formData = new FormData(form);
+    var formObject = {};
+    formData.forEach(function (value, key) {
+      formObject[key] = value;
+    });
 
-var formObject = {};
-formData.forEach(function (value, key) {
-  formObject[key] = value;
-});
-
-fetch('https://script.google.com/macros/s/AKfycbyxLYMk2WSL42FXoGDZQZFpcNwXveMR-JcHcGdY9ztmjqGygt8lf_3vLWhEPlK8hc8/exec', {
-  method: 'POST',
-  headers: {
-      'Content-Type': 'application/x-www-form-urlencoded',
-  },
-  body: new URLSearchParams(formObject)
-})
-.then(response => {
-  if (!response.ok) {
-      throw new Error('Network response was not ok.');
-  }
-  return response.text();
-})
-.then(data => {
-  alert('Game selections were successful. ' + data);
-})
-.catch(error => {
-  console.error('Error:', error);
-});
-});
+    fetch('https://script.google.com/macros/s/AKfycbyxLYMk2WSL42FXoGDZQZFpcNwXveMR-JcHcGdY9ztmjqGygt8lf_3vLWhEPlK8hc8/exec', {
+      method: 'POST',
+      headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      body: new URLSearchParams(formObject)
+    })
+    .then(response => {
+      if (!response.ok) {
+          throw new Error('Network response was not ok.');
+      }
+      return response.text();
+    })
+    .then(data => {
+      alert('Game selections were successful. ' + data);
+    })
+    .catch(error => {
+      console.error('Error:', error);
+    });
+  });
 </script>
 
 <!-- Clears form after submit -->
