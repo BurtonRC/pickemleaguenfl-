@@ -82,7 +82,7 @@
 
    <div class="box">
     <div class="weekTable">    
-        <form id="myForm" action="https://script.google.com/macros/s/AKfycbyQ09S-p916J29vdmjVxaL6weQG5ejGVZotLaoe_851S5dL56jOTdvX95CEQ9kDxUg/exec" method="post">
+        <form id="myForm">
             <div>
             <table>
                 <tbody>
@@ -603,34 +603,36 @@
 
 <script>
   document.getElementById('myForm').addEventListener('submit', function (event) {
-    var form = document.getElementById('myForm');
-    var formData = new FormData(form);
+event.preventDefault();
 
-    var formObject = {};
-    formData.forEach(function (value, key) {
-      formObject[key] = value;
-    });
+var form = document.getElementById('myForm');
+var formData = new FormData(form);
 
-    fetch('https://script.google.com/macros/s/AKfycbyQ09S-p916J29vdmjVxaL6weQG5ejGVZotLaoe_851S5dL56jOTdvX95CEQ9kDxUg/exec', {
-      method: 'POST',
-      headers: {
-          'Content-Type': 'application/x-www-form-urlencoded',
-      },
-      body: new URLSearchParams(formObject)
-    })
-    .then(response => {
-      if (!response.ok) {
-          throw new Error('Network response was not ok.');
-      }
-      return response.text();
-    })
-    .then(data => {
-      alert('Game selections were successful. ' + data);
-    })
-    .catch(error => {
-      console.error('Error:', error);
-    });
-  });
+var formObject = {};
+formData.forEach(function (value, key) {
+  formObject[key] = value;
+});
+
+fetch('https://script.google.com/macros/s/AKfycbzkH5o9TrPAQUxjt8Qy8gW8kmBnx32KgXpGXGQh-KEj4EBWALcv8WlzrXCZpxkzs7o/exec', {
+  method: 'POST',
+  headers: {
+      'Content-Type': 'application/x-www-form-urlencoded',
+  },
+  body: new URLSearchParams(formObject)
+})
+.then(response => {
+  if (!response.ok) {
+      throw new Error('Network response was not ok.');
+  }
+  return response.text();
+})
+.then(data => {
+  alert('Game selections were successful. ' + data);
+})
+.catch(error => {
+  console.error('Error:', error);
+});
+});
 </script>
 
 <!-- Clears form after submit -->
