@@ -82,18 +82,18 @@
 
    <div class="box">
     <div class="weekTable">    
-      <form id="myForm" method="post" action="https://script.google.com/macros/s/AKfycbwGJDJSs9ScgupMcPIBd9HuebsL6xld7i1_H5XYwSrtmBdxp0u6QpwZsM3n7cKguP0/exec">
+      <form id="myForm" method="post" action="https://script.google.com/macros/s/AKfycbzG0GUwF3lYfbVD78vPSWVBuu_B0vGbRgWKQPdHWHWDii50Njtz9djvLhUUJtW9G7E/exec">
             <div>
             <table>
                 <tbody>
                   <tr>
                       <td>
                         <label for="firstName">First Name:</label>
-                        <input type="text" id="firstName" name="firstName" oninput="checkNames()" required>
+                        <input type="text" id="firstName" name="firstName" required>
                       </td>
                       <td>
                         <label for="lastName">Last Name:</label>
-                        <input type="text" id="lastName" name="lastName" oninput="checkNames()" required>
+                        <input type="text" id="lastName" name="lastName" required>
                       </td>
                   </tr>
                 </tbody>    
@@ -612,8 +612,9 @@
       formObject[key] = value;
     });
 
-    fetch('https://script.google.com/macros/s/AKfycbwGJDJSs9ScgupMcPIBd9HuebsL6xld7i1_H5XYwSrtmBdxp0u6QpwZsM3n7cKguP0/exec', {
+    fetch('https://script.google.com/macros/s/AKfycbzG0GUwF3lYfbVD78vPSWVBuu_B0vGbRgWKQPdHWHWDii50Njtz9djvLhUUJtW9G7E/exec', {
       method: 'POST',
+      mode: 'no-cors',
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded',
       },
