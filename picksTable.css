@@ -709,7 +709,7 @@ thead th {
     .submitButton {
       height:35px;
       width: 65px;
-      font-size: medium;
+      font-size: small;
     }
 
   }
