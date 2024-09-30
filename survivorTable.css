@@ -37,11 +37,11 @@
 @media (max-width: 440px) {
 
   .survivorLogos img {
-    width: 50px;
+    width: 45px;
   }
 
   .survLogosActive img {
-    width: 50px;
+    width: 45px;
   }
 
 }
@@ -49,11 +49,11 @@
 @media (max-width: 300px) {
 
   .survivorLogos img {
-    width: 40px;
+    width: 30px;
   }
 
   .survLogosActive img {
-    width: 40px;
+    width: 30px;
   }
 
 }
