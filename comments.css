@@ -34,6 +34,7 @@
   margin-top: 40px;
   height: 400px;
   overflow: scroll;
+  background-color: #fff;
 }
 
 .comment-box h2 {
