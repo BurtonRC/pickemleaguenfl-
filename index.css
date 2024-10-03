@@ -9,6 +9,16 @@ body {
   margin: 0;
 }
 
+/* <uniquifier>: Use a unique and descriptive class name
+// <weight>: Use a value from 100 to 900
+
+.montserrat-<uniquifier> {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+} */
+
 a:hover {
   color: #0283ae;
 }
@@ -872,7 +882,7 @@ ul {
 
   .video-player {
     max-width: 100%;
-    margin-top: 23px;
+    /*margin-top: 23px;*/
   }
 
   .video-thumbnail {
@@ -898,6 +908,7 @@ ul {
 
   .schedule-list {
     padding: 21px 20px 38px;
+    font-size: 11px;
   }
 
   .footer {
@@ -952,6 +963,10 @@ ul {
 
   .schedule-title {
     padding: 12px 20px;
+}
+
+.schedule-list {
+  font-size: 14px;
 }
 
   .featured-content,
@@ -1109,6 +1124,10 @@ ul {
     padding: 0 10px;
   }
 
+  .schedule-list {
+    font-size: 12px;
+  }
+
   .comment-box label {
     font-size: 14px;
   }
@@ -1182,6 +1201,7 @@ ul {
 
   .schedule-list {
     padding: 10px 15px;
+    font-size: 12px;
   }
 
   .footer {
