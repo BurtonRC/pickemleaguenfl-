@@ -1,0 +1,111 @@
+.selectors-comments {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start; /* Align items to the left */
+  margin: 0 auto;
+}
+
+/* Comment Box */
+
+.comment-box {
+  background-color: #f4f7f8;
+  padding: 20px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 70px auto;
+}
+
+.comment-box label {
+  align-self: flex-start;
+  margin: 10px 10px 5px;
+}
+
+#comments-box {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 5px;
+  width: 80%;
+  margin-top: 40px;
+  height: 400px;
+  overflow: scroll;
+}
+
+.comment-box h2 {
+  margin-top: 0;
+  text-align: center;
+  font-size: 20px;
+}
+
+.comment-box form {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.comment-form-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.comment-form-group label {
+  align-self: flex-start;
+  margin-bottom: 5px;
+}
+
+.comment-box input, .comment-box textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.comment-box button {
+  height: 40px;
+  width: 100px;
+  border-radius: 10px;
+  background-color: green;
+  font-size: 16px;
+  color: #fff;
+  cursor: pointer;
+  align-self: center;
+  margin-top: 12px;
+}
+
+.comment-box button:hover {
+  background-color: rgb(84, 187, 53);
+  color: rgb(0, 0, 0);
+}
+
+
+#name {
+  width: 100%;
+}
+
+.form-group-comments {
+  margin: 25px 15px;
+}
+
+.custom-select {
+  flex: 1; /* Allow dropdown to take available space */
+  min-width: 150px; /* Ensure dropdowns have a minimum width */
+  max-width: 150px;
+}
+
+#labelYear {
+  margin: 0 17px 0 10px;
+}
+
+#labelWeek {
+  margin: 0 5px 0 10px;
+}
