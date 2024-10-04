@@ -19,6 +19,10 @@ body {
   font-style: normal;
 } */
 
+.hidden {
+  display: none;
+}
+
 a:hover {
   color: #0283ae;
 }

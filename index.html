@@ -332,8 +332,8 @@ const firebaseConfig = {
           commentElement.innerHTML = `
               <strong>${comment.name}</strong> (${timestamp.toLocaleString()}):
               <p>${comment.comment}</p>
-              <button onclick="editComment('${commentId}', '${escapedCommentText}')">Edit</button>
-              <button onclick="deleteComment('${commentId}')">Delete</button>
+              <button class="hidden" onclick="editComment('${commentId}', '${escapedCommentText}')">Edit</button>
+              <button class="hidden" onclick="deleteComment('${commentId}')">Delete</button>
               <hr>
           `;
           commentsBox.appendChild(commentElement);
@@ -362,7 +362,7 @@ const firebaseConfig = {
       }
   });
 
-  /* Function to delete a comment
+  // Function to delete a comment
   window.deleteComment = async function(commentId) {
       const commentRef = doc(db, 'comments', commentId);
       try {
@@ -382,7 +382,7 @@ const firebaseConfig = {
             .then(() => console.log('Comment updated!'))
             .catch((error) => console.error('Error updating comment:', error));
       }
-  };*/
+  };
 </script>
 
 </body>
