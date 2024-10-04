@@ -194,19 +194,18 @@
 </script>
 
 <!-- Comments -->
-
 <script type="module">
   import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
   import { getFirestore, collection, addDoc, getDocs, query, orderBy, where } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js";
 
   // Your web app's Firebase configuration
   const firebaseConfig = {
-    apiKey: "AIzaSyCYrLl1WIblJhDUi1lBt6sCHvdl37lhHgE",
-    authDomain: "my-comments-section.firebaseapp.com",
-    projectId: "my-comments-section",
-    storageBucket: "my-comments-section.appspot.com",
-    messagingSenderId: "74848503752",
-    appId: "1:74848503752:web:27173c5299e3bd91b022fd"
+      apiKey: "AIzaSyCYrLl1WIblJhDUi1lBt6sCHvdl37lhHgE",
+      authDomain: "my-comments-section.firebaseapp.com",
+      projectId: "my-comments-section",
+      storageBucket: "my-comments-section.appspot.com",
+      messagingSenderId: "74848503752",
+      appId: "1:74848503752:web:27173c5299e3bd91b022fd"
   };
 
   // Initialize Firebase
@@ -240,38 +239,38 @@
       }
   });
 
-  // Function to load and display comments
-async function loadComments() {
-    const pageIdentifier = window.location.pathname; // Get current page URL
+  // Define loadComments globally so it's accessible
+  window.loadComments = async function loadComments() {
+      const pageIdentifier = window.location.pathname; // Get current page URL
 
-    console.log("Loading comments for:", pageIdentifier);
+      console.log("Loading comments for:", pageIdentifier);
 
-    const commentsBox = document.getElementById('comments-box');
-    commentsBox.innerHTML = ''; // Clear previous comments
+      const commentsBox = document.getElementById('comments-box');
+      commentsBox.innerHTML = ''; // Clear previous comments
 
-    try {
-        const q = query(collection(db, 'comments'), where('page', '==', pageIdentifier), orderBy('timestamp', 'desc'));
-        const querySnapshot = await getDocs(q);
+      try {
+          const q = query(collection(db, 'comments'), where('page', '==', pageIdentifier), orderBy('timestamp', 'desc'));
+          const querySnapshot = await getDocs(q);
 
-        querySnapshot.forEach((doc) => {
-            const comment = doc.data();
-            const commentElement = document.createElement('div');
+          querySnapshot.forEach((doc) => {
+              const comment = doc.data();
+              const commentElement = document.createElement('div');
 
-            // Check if timestamp is a Firestore Timestamp object
-            const timestamp = comment.timestamp;
-            const date = timestamp ? timestamp.toDate() : new Date(); // Convert to JavaScript Date
+              // Check if timestamp is a Firestore Timestamp object
+              const timestamp = comment.timestamp;
+              const date = timestamp ? timestamp.toDate() : new Date(); // Convert to JavaScript Date
 
-            commentElement.innerHTML = `
-                <strong>${comment.name}</strong> (${date.toLocaleString()}):
-                <p>${comment.comment}</p>
-                <hr>
-            `;
-            commentsBox.appendChild(commentElement);
-        });
-    } catch (error) {
-        console.error('Error loading comments: ', error);
-    }
-}
+              commentElement.innerHTML = `
+                  <strong>${comment.name}</strong> (${date.toLocaleString()}):
+                  <p>${comment.comment}</p>
+                  <hr>
+              `;
+              commentsBox.appendChild(commentElement);
+          });
+      } catch (error) {
+          console.error('Error loading comments: ', error);
+      }
+  };
 
 </script>
 
