@@ -10,6 +10,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-firestore.js"></script>
+
 
   <title>JW's Pick'em League</title>
 </head>
@@ -81,6 +84,22 @@
   
 </div>
 
+<div class="comment-box">
+  <h2>Leave a Comment</h2>
+  <form id="commentForm">
+    <div class="comment-form-group">
+      <label for="name">Name:</label>
+      <input type="text" id="name" required>
+    </div>
+    <div class="comment-form-group">
+      <label for="comment">Comment:</label>
+      <textarea id="comment" rows="4" required></textarea>
+    </div>
+    <button type="submit">Submit</button>
+  </form>
+  <div id="comments-box"></div>
+</div>
+
 
 
    
@@ -117,19 +136,6 @@
       </div>
       </div>
     </section>-->
-
-    
-
-    <!--<div class="comment-box">
-      <h2>Leave a Comment</h2>
-      <form id="commentForm" method="post" action="https://script.google.com/macros/s/AKfycbwxOFWQRXSq23FLuh-DgOy_TNGlf5cev2p-oTbi-YD6V-6nVM8wBvUWd8yWnTexp28/exec">
-          <label for="name">Name:</label>
-          <input type="text" id="name" name="name" required>
-          <label for="comment">Comment:</label>
-          <textarea id="comment" name="comment" required></textarea>
-          <button type="submit">Submit</button>
-      </form>
-    </div>-->
   
   <br><br>
 
@@ -192,16 +198,7 @@
   window.onload = fetchTableData;
 </script>
 
-<!--Comment Box
-
-<script>
-document.getElementById('commentForm').addEventListener('submit', function(event) {
-      alert('Your comment has been submitted!');
-    });
-
-</script>-->
-
-
+<script src="comments.js"></script>
 
 
 </body>
