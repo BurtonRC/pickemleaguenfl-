@@ -16,12 +16,14 @@
   const db = firebase.firestore();
   
   // Handle form submission
-  document.getElementById('commentForm').addEventListener('submit', function(e) {
+document.getElementById('commentForm').addEventListener('submit', function(e) {
     e.preventDefault(); // Prevent page reload
-  
+    
     const name = document.getElementById('name').value;
     const commentText = document.getElementById('comment').value;
     const pageIdentifier = window.location.pathname; // Use page URL to identify comments for this page
+  
+    console.log("Submitting comment:", { name, commentText, pageIdentifier });
   
     // Save comment to Firestore
     db.collection('comments').add({
@@ -38,9 +40,12 @@
     });
   });
   
+  
   // Function to load and display comments
-  function loadComments() {
+function loadComments() {
     const pageIdentifier = window.location.pathname; // Get current page URL
+  
+    console.log("Loading comments for:", pageIdentifier);
   
     // Get comments for the current page, ordered by timestamp
     db.collection('comments')
@@ -61,9 +66,12 @@
           `;
           commentsBox.appendChild(commentElement);
         });
+      }).catch((error) => {
+        console.error('Error loading comments: ', error);
       });
   }
   
   // Load comments when the page loads
   window.onload = loadComments;
+  
   
