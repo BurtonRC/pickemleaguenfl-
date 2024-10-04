@@ -241,28 +241,38 @@
   });
 
   // Function to load and display comments
-  async function loadComments() {
-      const pageIdentifier = window.location.pathname; // Get current page URL
+async function loadComments() {
+    const pageIdentifier = window.location.pathname; // Get current page URL
 
-      console.log("Loading comments for:", pageIdentifier);
+    console.log("Loading comments for:", pageIdentifier);
 
-      const commentsBox = document.getElementById('comments-box');
-      commentsBox.innerHTML = ''; // Clear previous comments
+    const commentsBox = document.getElementById('comments-box');
+    commentsBox.innerHTML = ''; // Clear previous comments
 
-      const q = query(collection(db, 'comments'), where('page', '==', pageIdentifier), orderBy('timestamp', 'desc'));
-      const querySnapshot = await getDocs(q);
+    try {
+        const q = query(collection(db, 'comments'), where('page', '==', pageIdentifier), orderBy('timestamp', 'desc'));
+        const querySnapshot = await getDocs(q);
 
-      querySnapshot.forEach((doc) => {
-          const comment = doc.data();
-          const commentElement = document.createElement('div');
-          commentElement.innerHTML = `
-              <strong>${comment.name}</strong> (${new Date(comment.timestamp).toLocaleString()}):
-              <p>${comment.comment}</p>
-              <hr>
-          `;
-          commentsBox.appendChild(commentElement);
-      });
-  }
+        querySnapshot.forEach((doc) => {
+            const comment = doc.data();
+            const commentElement = document.createElement('div');
+
+            // Check if timestamp is a Firestore Timestamp object
+            const timestamp = comment.timestamp;
+            const date = timestamp ? timestamp.toDate() : new Date(); // Convert to JavaScript Date
+
+            commentElement.innerHTML = `
+                <strong>${comment.name}</strong> (${date.toLocaleString()}):
+                <p>${comment.comment}</p>
+                <hr>
+            `;
+            commentsBox.appendChild(commentElement);
+        });
+    } catch (error) {
+        console.error('Error loading comments: ', error);
+    }
+}
+
 
   // Load comments when the page loads
   window.onload = loadComments;
