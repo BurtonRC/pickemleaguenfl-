@@ -255,7 +255,23 @@
             </ul>
           </div>
         </aside>
-    </section>  
+    </section>
+    
+    <div class="comment-box">
+      <h2>Leave a Comment</h2>
+      <form id="commentForm">
+        <div class="comment-form-group">
+          <label for="name">Name:</label>
+          <input type="text" id="name" required>
+        </div>
+        <div class="comment-form-group">
+          <label for="comment">Comment:</label>
+          <textarea id="comment" rows="4" required></textarea>
+        </div>
+        <button type="submit">Submit</button>
+      </form>
+      <div id="comments-box"></div>
+    </div>
   
     <footer class="footer">
       <div class="footer-container">
@@ -277,6 +293,94 @@
   menuContent.classList.toggle("menu-open");
 }
   </script>
+
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
+  import { getFirestore, collection, addDoc, updateDoc, deleteDoc, query, orderBy, where, onSnapshot, doc } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js";
+
+  // Firebase configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyCYrLl1WIblJhDUi1lBt6sCHvdl37lhHgE",
+    authDomain: "my-comments-section.firebaseapp.com",
+    projectId: "my-comments-section",
+    storageBucket: "my-comments-section.appspot.com",
+    messagingSenderId: "74848503752",
+    appId: "1:74848503752:web:27173c5299e3bd91b022fd"
+  };
+
+  // Initialize Firebase and Firestore
+  const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app);
+
+  // Real-time comments update listener
+  const pageIdentifier = window.location.pathname;
+  const q = query(collection(db, 'comments'), where('page', '==', pageIdentifier), orderBy('timestamp', 'desc'));
+
+  onSnapshot(q, (snapshot) => {
+      const commentsBox = document.getElementById('comments-box');
+      commentsBox.innerHTML = ''; // Clear previous comments
+
+      snapshot.forEach((docSnap) => {
+          const comment = docSnap.data();
+          const commentId = docSnap.id; // Get the document ID
+          const timestamp = comment.timestamp.toDate(); // Convert to JS Date
+
+          const commentElement = document.createElement('div');
+          commentElement.innerHTML = `
+              <strong>${comment.name}</strong> (${timestamp.toLocaleString()}):
+              <p>${comment.comment}</p>
+              <button onclick="editComment('${commentId}', '${comment.comment}')">Edit</button>
+              <button onclick="deleteComment('${commentId}')">Delete</button>
+              <hr>
+          `;
+          commentsBox.appendChild(commentElement);
+      });
+  });
+
+  // Handle form submission
+  document.getElementById('commentForm').addEventListener('submit', async function(e) {
+      e.preventDefault(); // Prevent page reload
+
+      const name = document.getElementById('name').value;
+      const commentText = document.getElementById('comment').value;
+
+      try {
+          await addDoc(collection(db, 'comments'), {
+              name: name,
+              comment: commentText,
+              page: pageIdentifier,
+              timestamp: new Date()
+          });
+
+          console.log('Comment added!');
+          document.getElementById('commentForm').reset(); // Clear form
+      } catch (error) {
+          console.error('Error adding comment:', error);
+      }
+  });
+
+  // Function to delete a comment
+  window.deleteComment = async function(commentId) {
+      const commentRef = doc(db, 'comments', commentId);
+      try {
+          await deleteDoc(commentRef);
+          console.log('Comment deleted!');
+      } catch (error) {
+          console.error('Error deleting comment:', error);
+      }
+  };
+
+  // Function to edit a comment
+  window.editComment = function(commentId, oldCommentText) {
+      const newComment = prompt("Edit your comment:", oldCommentText);
+      if (newComment !== null && newComment !== '') {
+          const commentRef = doc(db, 'comments', commentId);
+          updateDoc(commentRef, { comment: newComment })
+            .then(() => console.log('Comment updated!'))
+            .catch((error) => console.error('Error updating comment:', error));
+      }
+  };
+</script>
 
 </body>
 </html>
