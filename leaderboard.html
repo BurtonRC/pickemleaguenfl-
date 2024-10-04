@@ -191,9 +191,9 @@
       });
   }
 
-  // Fetch data when the page loads
-  window.onload = fetchTableData;
 </script>
+
+<!-- Comments -->
 
 <script type="module">
   import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
@@ -273,9 +273,14 @@ async function loadComments() {
     }
 }
 
+</script>
 
-  // Load comments when the page loads
-  window.onload = loadComments;
+<!-- Combine Both Scripts on Page Load -->
+<script>
+  window.onload = function() {
+      fetchTableData(); // Fetch leaderboard data
+      loadComments(); // Load comments
+  };
 </script>
 
 
