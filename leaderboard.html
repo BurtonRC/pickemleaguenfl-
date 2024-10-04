@@ -12,15 +12,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   <title>JW's Pick'em League</title>
 
-  <!-- Firebase App (the core Firebase SDK) -->
-  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
-
-  <!-- Firebase Firestore SDK -->
-  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js"></script>
-
-  <!-- Link to your custom JavaScript file -->
-  <script src="comments.js" defer></script> 
-
 </head>
 <body>
   
@@ -202,6 +193,79 @@
 
   // Fetch data when the page loads
   window.onload = fetchTableData;
+</script>
+
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
+  import { getFirestore, collection, addDoc, getDocs, query, orderBy, where } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js";
+
+  // Your web app's Firebase configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyCYrLl1WIblJhDUi1lBt6sCHvdl37lhHgE",
+    authDomain: "my-comments-section.firebaseapp.com",
+    projectId: "my-comments-section",
+    storageBucket: "my-comments-section.appspot.com",
+    messagingSenderId: "74848503752",
+    appId: "1:74848503752:web:27173c5299e3bd91b022fd"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app);
+
+  // Handle form submission
+  document.getElementById('commentForm').addEventListener('submit', async function(e) {
+      e.preventDefault(); // Prevent page reload
+
+      const name = document.getElementById('name').value;
+      const commentText = document.getElementById('comment').value;
+      const pageIdentifier = window.location.pathname; // Use page URL to identify comments for this page
+
+      console.log("Submitting comment:", { name, commentText, pageIdentifier });
+
+      try {
+          // Save comment to Firestore
+          await addDoc(collection(db, 'comments'), {
+              name: name,
+              comment: commentText,
+              page: pageIdentifier, // Store which page the comment belongs to
+              timestamp: new Date() // Timestamp of comment
+          });
+
+          console.log('Comment added!');
+          document.getElementById('commentForm').reset(); // Clear form
+          loadComments(); // Reload comments after new one is added
+      } catch (error) {
+          console.error('Error adding comment: ', error);
+      }
+  });
+
+  // Function to load and display comments
+  async function loadComments() {
+      const pageIdentifier = window.location.pathname; // Get current page URL
+
+      console.log("Loading comments for:", pageIdentifier);
+
+      const commentsBox = document.getElementById('comments-box');
+      commentsBox.innerHTML = ''; // Clear previous comments
+
+      const q = query(collection(db, 'comments'), where('page', '==', pageIdentifier), orderBy('timestamp', 'desc'));
+      const querySnapshot = await getDocs(q);
+
+      querySnapshot.forEach((doc) => {
+          const comment = doc.data();
+          const commentElement = document.createElement('div');
+          commentElement.innerHTML = `
+              <strong>${comment.name}</strong> (${new Date(comment.timestamp).toLocaleString()}):
+              <p>${comment.comment}</p>
+              <hr>
+          `;
+          commentsBox.appendChild(commentElement);
+      });
+  }
+
+  // Load comments when the page loads
+  window.onload = loadComments;
 </script>
 
 
