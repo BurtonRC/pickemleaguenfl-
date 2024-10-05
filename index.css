@@ -435,6 +435,14 @@ ul {
   padding: 0 0 0 17px;
 }
 
+.image-container p {
+  text-align: center;
+  color: #e22324;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
 /* Text container */
 .text-container {
   width: 75%; /* 3/4 of the total width */
@@ -904,6 +912,18 @@ ul {
     padding: 13px 0px;
   }
 
+  .image-container img {
+    padding: 0 0 0 6px;
+  }
+
+  .image-container p {
+    text-align: center;
+    color: #e22324;
+    font-weight: 700;
+    font-size: 11px;
+    line-height: 1;
+  }
+
   .schedule-title {
     padding: 12px 20px;
 }
@@ -1051,11 +1071,18 @@ ul {
   .image-container img {
     width: 70%;
     height: auto;
-    padding: 0 0 0 3px;
+    padding: 0 0 0 11px;
   }
 
   .image-container {
     margin-right: 0;
+  }
+
+  .image-container p {
+    text-align: center;
+    color: #e22324;
+    font-size: 10px;
+    line-height: 1;
   }
 
   .team-logo {
@@ -1067,6 +1094,8 @@ ul {
     gap: 0;
     padding: 0 10px;
   }
+
+
 
   .schedule-list {
     font-size: 12px;
@@ -1107,7 +1136,11 @@ ul {
   .image-container img {
     width: 70%;
     height: auto;
-    padding: 0 0 0 3px;
+    padding: 0 0 0 8px;
+  }
+
+  .image-container p {
+    font-size: 8px;
   }
 
   .logo-grid {
