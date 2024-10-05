@@ -69,6 +69,8 @@
       <thead>
         <tr>
           <th>Name</th>
+          <th>Prev Week</th>
+          <th>This Week</th>
           <th>Points</th>
           <th>DB</th>
           <th>PS</th>
@@ -175,7 +177,7 @@
         data.forEach(row => {
           let tableRow = document.createElement('tr');
           
-          // Create table cells for each value (Name, Points, DB, PS)
+          // Create table cells for each value (Name, Prev Wk, This Wk, Points, DB, PS)
           row.forEach(cellData => {
             let cell = document.createElement('td');
             cell.textContent = cellData;
