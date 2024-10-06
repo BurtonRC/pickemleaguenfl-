@@ -246,7 +246,7 @@ ul {
   gap: 0;
   width: 100%;
   max-width: 1042px;
-  margin: 20px auto; /* Center the grid on the page */
+  margin: 30px auto; /* Center the grid on the page */
   gap: 0px; /* Space between the image and side features */
   justify-content: center;
 }
@@ -527,7 +527,7 @@ ul {
 }
 
 .vid-sched {
-  margin-top: 16px;
+  margin-top: 30px;
   width: 100%;
   max-width: 1042px;
 }
@@ -969,6 +969,7 @@ ul {
 
   .video-container {
     width: 100%;
+    margin-top: 15px;
   }
 
   /* If you have columns, make sure they take full width when stacked */
