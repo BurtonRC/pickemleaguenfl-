@@ -762,6 +762,7 @@
             console.log("Setting checkbox: ", cookieId);  //Debug
         }
         input.disabled = true;  // Disable previously selected option
+        console.log("Disabled input: ", cookieId, input.disabled);
         input.parentElement.style.color = "grey";  // Grey out the label
     }
 });
