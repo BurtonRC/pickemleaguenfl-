@@ -739,17 +739,17 @@ function saveSelections(userName, selections) {
     setCookie(userName + '_selections', JSON.stringify(selections), 7);
 }
 
-// Handle name input change and apply previous selections
-document.getElementById('firstName').addEventListener('input', function(event) {
-    const firstName = event.target.value.trim();
+// Handle first and last name inputs together to trigger validation and loading
+function handleNameInput() {
+    const firstName = document.getElementById('firstName').value.trim();
     const lastName = document.getElementById('lastName').value.trim();
-    const fullName = firstName + ' ' + lastName;
-
-    if (validateName(firstName, lastName)) {
-        console.log('Valid name entered:', fullName); // Debugging line
+    
+    if (firstName && lastName && validateName(firstName, lastName)) {
+        const fullName = firstName + ' ' + lastName;
+        console.log('Valid name entered:', fullName);  // Debugging line
+        
         const previousSelections = loadSelections(fullName);
-
-        console.log('Previous selections loaded:', previousSelections); // Debugging line
+        console.log('Previous selections loaded:', previousSelections);  // Debugging line
 
         // Apply selections and disable the relevant fields
         document.querySelectorAll('select[data-cookie-id], input[type="checkbox"][data-cookie-id]').forEach(input => {
@@ -765,9 +765,15 @@ document.getElementById('firstName').addEventListener('input', function(event) {
             }
         });
     } else {
-        console.log('Invalid name, selections not applied'); // Debugging line
+        console.log('Invalid name, selections not applied');  // Debugging line
     }
-});
+}
+
+// Add event listeners for both first and last name inputs
+document.getElementById('firstName').addEventListener('input', handleNameInput);
+document.getElementById('lastName').addEventListener('input', handleNameInput);
+
+
 
 // Handle form submission
 document.getElementById('myForm').addEventListener('submit', function(event) {
