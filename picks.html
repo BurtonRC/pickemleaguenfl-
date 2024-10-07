@@ -124,14 +124,14 @@
                               <span>NyG(db)</span>  <br><br>
                               <div class="slide-box">
                                 <label class="switch">
-                                <input type="checkbox" name="DriveBy_1" value="NY Giants(db)" /><div></div></label>
+                                <input type="checkbox" id="driveby_1" name="DriveBy_1" value="NYG(db)" /><div></div></label>
                               </div>
                             </td> -->
                             <td></td>
                             <td></td>
                             <!-- <td>
                                 <label for="baltPs">Baltimore +3.5
-                                <select name="PointSpread_1" required>
+                                <select name="PointSpread_1" id="pointspread_1">
                                     <option value="">--Select Team--</option>
                                     <option value="Balt Cover">Balt covers +3.5</option>
                                     <option value="KC Cover">KC covers +3.5</option>
@@ -139,7 +139,7 @@
                                 </label>
                             </td> -->
                             <td>
-                                <select name="Games_1">
+                                <select data-cookie-id="game1" name="Games_1">
                                     <option value="">--Select Team--</option>
                                     <option value="Tampa Bay">Tampa Bay Buccaneers</option>
                                     <option value="Atlanta">Atlanta Falcons</option>
@@ -169,7 +169,7 @@
                                 </label>
                             </td>-->
                             <td>
-                                <select name="Games_2">
+                                <select data-cookie-id="game2" name="Games_2">
                                     <option value="">--Select Team--</option>
                                     <option value="NY Jets">NY Jets</option>
                                     <option value="Minnesota">Minnesota Vikings</option>
@@ -192,7 +192,7 @@
                             
                             <td></td>
                             <td>
-                                <select name="Games_3">
+                                <select data-cookie-id="game3" name="Games_3">
                                     <option value="">--Select Team--</option>
                                     <option value="Carolina">Carolina Panthers</option>
                                     <option value="Chicago">Chicago Bears</option>
@@ -214,7 +214,7 @@
                             
                             <td></td>
                             <td>
-                                <select name="Games_4">
+                                <select data-cookie-id="game4" name="Games_4">
                                     <option value="">--Select Team--</option>
                                     <option value="Baltimore">Baltimore Ravens</option>
                                     <option value="Cincinnati">Cincinnati Bengals</option>
@@ -236,7 +236,7 @@
                             
                             <td></td>
                             <td>
-                                <select name="Games_5">
+                                <select data-cookie-id="game5" name="Games_5">
                                     <option value="">--Select Team--</option>
                                     <option value="Buffalo">Buffalo Bills</option>
                                     <option value="Houston">Houston Texans</option>
@@ -260,7 +260,7 @@
                             <td></td>
                             <td></td>
                             <td>
-                                <select name="Games_6">
+                                <select data-cookie-id="game6" name="Games_6">
                                     <option value="">--Select Team--</option>
                                     <option value="Indianapolis">Indianapolis Colts</option>
                                     <option value="Jacksonville">Jacksonville Jaguars</option>
@@ -275,7 +275,7 @@
                             <td></td>
                             <td></td>
                             <td>
-                                <select name="Games_7">
+                                <select data-cookie-id="game7" name="Games_7">
                                     <option value="">--Select Team--</option>
                                     <option value="Miami">Miami Dolphins</option>
                                     <option value="New England">New Eng Patriots</option>
@@ -306,7 +306,7 @@
                             </td> -->
                             <td></td>
                             <td>
-                                <select name="Games_8">
+                                <select data-cookie-id="game8" name="Games_8">
                                     <option value="">--Select Team--</option>
                                     <option value="Cleveland">Cleveland Browns</option>
                                     <option value="Washington">Washington Commanders</option>
@@ -321,7 +321,7 @@
                             <td></td>
                             <td></td>
                             <td>
-                                <select name="Games_9">
+                                <select data-cookie-id="game9" name="Games_9">
                                     <option value="">--Select Team--</option>
                                     <option value="Las Vegas">Las Vegas Raiders</option>
                                     <option value="Denver">Denver Broncos</option>
@@ -337,12 +337,12 @@
                               <span>AzC(db)</span>  <br><br>
                               <div class="slide-box">
                                 <label class="switch">
-                                <input type="checkbox" id="toggle-azc" name="DriveBy_10" value="AzC(db)" />    <div></div></label>
+                                <input type="checkbox" id="toggle-azc" name="DriveBy_10" value="AzC(db)" data-cookie-id="toggle-azc"/>    <div></div></label>
                               </div>
                             </td>
                             <td></td>
                             <td>
-                                <select id="dropdown-azc" name="Games_10">
+                                <select id="dropdown-azc" name="Games_10" data-cookie-id="game-10">
                                     <option value="">--Select Team--</option>
                                     <option value="AzC(db)">Arizona Cardinals (db)</option>
                                     <option value="San Fran">San Fran 49ers</option>
@@ -363,7 +363,7 @@
                             </td>-->
                             <td></td>
                             <td>
-                                <select name="Games_11">
+                                <select data-cookie-id=""="game11" name="Games_11">
                                     <option value="">--Select Team--</option>
                                     <option value="Green Bay">Green Bay Packers</option>
                                     <option value="LA Rams">Los Angeles Rams</option>
@@ -380,7 +380,7 @@
                               <span>NYG(db)</span>  <br><br>
                               <div class="slide-box">
                                 <label class="switch">
-                                <input type="checkbox" id="toggle-nyg" name="DriveBy_12" value="NYG(db)" />    <div></div></label>
+                                <input type="checkbox" id="toggle-nyg" name="DriveBy_12" value="NYG(db)" data-cookie-id="toggle-nyg" />    <div></div></label>
                               </div>
                             </td>
                              
@@ -388,7 +388,7 @@
                             
                             <td></td>
                             <td>
-                                <select id="dropdown-nyg" name="Games_12">
+                                <select id="dropdown-nyg" name="Games_12" data-cookie-id="game12">
                                     <option value="">--Select Team--</option>
                                     <option value="NYG(db)">NY Giants (db)</option>
                                     <option value="Seattle">Seattle Seahawks</option>
@@ -403,7 +403,7 @@
                             <td></td>
                             <td></td>
                             <td>
-                                <select name="Games_13">
+                                <select data-cookie-id="game13" name="Games_13">
                                     <option value="">--Select Team--</option>
                                     <option value="Dallas">Dallas Cowboys</option>
                                     <option value="Pittsburgh">Pittsburgh Steelers</option>
@@ -425,7 +425,7 @@
                             
                             <td>
                                 <label for="NOSPs">NOS +4.5
-                                <select name="PointSpread_14">
+                                <select data-cookie-id="pointspread14" name="PointSpread_14">
                                     <option value="">--Select Cover--</option>
                                     <option value="NO Cover">NO covers +4.5</option>
                                     <option value="KC Cover">KC covers -4.5</option>
@@ -433,7 +433,7 @@
                                 </label>
                             </td>
                             <td>
-                                <select name="Games_14">
+                                <select data-cookie-id="game14" name="Games_14">
                                     <option value="">--Select Team--</option>
                                     <option value="New Orleans">New Orleans Saints</option>
                                     <option value="Kansas City">Kansas City Chiefs</option>
@@ -455,7 +455,7 @@
                             
                           <!--  <td></td>
                             <td>
-                                <select name="Games_15">
+                                <select data-cookie-id="game15" name="Games_15">
                                     <option value="">--Select Team--</option>
                                     <option value="Tennessee">Tennessee Titans</option>
                                     <option value="Miami">Miami Dolphins</option>
@@ -477,7 +477,7 @@
                             
                             <td></td>
                             <td>
-                                <select name="Games_16">
+                                <select data-cookie-id="game16" name="Games_16">
                                     <option value="">--Select Team--</option>
                                     <option value="Seattle">Seattle Seahawks</option>
                                     <option value="Detroit">Detroit Lions</option>
@@ -600,18 +600,6 @@
     </footer>
   </section>
 
-  
-  <!--<script>
-    function checkNames() {
-      var firstName = document.getElementById("firstName").value;
-      var lastName = document.getElementById("lastName").value;
-      
-      google.script.run.withSuccessHandler(function(isValid) {
-        document.getElementById("survivor").disabled = !isValid;
-      }).checkName(firstName, lastName);
-    }
-  </script>-->
-
 
   <!-- Hamburger toggle -->
   
@@ -658,7 +646,7 @@
   });
 </script>
 
-<!-- Toggle Dropdown synch -->
+<!-- Toggle/Dropdown sync -->
 
 <script>
   // Create a function to synchronize toggle and dropdown
@@ -697,6 +685,134 @@
 
   // Add more pairs as necessary using the same pattern
 </script>
+
+<!-- Track User Inputs with Cookies, Multiple Sessions -->
+
+<script>
+  // List of valid names
+  const validNames = [
+      "Adam Kenny", 
+      "Alan Silk", 
+      "Andrew Donachuk", 
+      "Brad De Ryck", 
+      "Brett Steidl", 
+      "Chris Stenberg", 
+      "Colin Larsen", 
+      "Colm Bolger", 
+      "Conor O'Brien", 
+      "Corey McKay", 
+      "Darren Barabash", 
+      "Daryl Krywonis", 
+      "Donald Van Landeghem", 
+      "Doug Roberts", 
+      "Drew Riddolls", 
+      "Eric Matthies", 
+      "Fran Fitzpatrick", 
+      "Gavin Steidl", 
+      "Ian Silk", 
+      "Jake Giesbrecht", 
+      "John Harper", 
+      "John Wyndels", 
+      "Kong Vong", 
+      "Matt Wyndels", 
+      "Makaila Hardy", 
+      "Nisha Krywonis", 
+      "Noel Leon", 
+      "Paul McGuire", 
+      "Ray Riddolls", 
+      "Rick Halas", 
+      "Roudy Courser", 
+      "Sean Kimmel", 
+      "Shaun Foley"
+  ];
+  
+  // Helper functions for cookies
+  function setCookie(name, value, days) {
+      let expires = "";
+      if (days) {
+          const date = new Date();
+          date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+          expires = "; expires=" + date.toUTCString();
+      }
+      document.cookie = name + "=" + encodeURIComponent(value) + expires + "; path=/";
+  }
+  
+  function getCookie(name) {
+      let cookies = document.cookie.split('; ');
+      for (let cookie of cookies) {
+          let [key, value] = cookie.split('=');
+          if (key === name) return decodeURIComponent(value);
+      }
+      return null;
+  }
+  
+  // Function to validate the name
+  function validateName(firstName, lastName) {
+      return validNames.includes(firstName.trim() + ' ' + lastName.trim());
+  }
+  
+  // Load user selections from cookies
+  function loadSelections(userName) {
+      let selections = getCookie(userName + '_selections');
+      return selections ? JSON.parse(selections) : {};
+  }
+  
+  // Save selections to cookies
+  function saveSelections(userName, selections) {
+      setCookie(userName + '_selections', JSON.stringify(selections), 7);
+  }
+  
+  // Handle form load
+  document.getElementById('firstName').addEventListener('input', function(event) {
+      const firstName = event.target.value.trim();
+      const lastName = document.getElementById('lastName').value.trim();
+      const fullName = firstName + ' ' + lastName;
+  
+      if (validateName(firstName, lastName)) {
+          const previousSelections = loadSelections(fullName);
+  
+          // Disable previously selected options, DBs, and PS selections
+          document.querySelectorAll('select[data-cookie-id], input[type="checkbox"][data-cookie-id]').forEach(input => {
+              const cookieId = input.getAttribute('data-cookie-id');
+              if (previousSelections[cookieId]) {
+                  if (input.tagName === 'SELECT') {
+                      input.value = previousSelections[cookieId];  // Set previously selected value
+                  } else if (input.type === 'checkbox') {
+                      input.checked = true;  // Check previously selected checkbox
+                  }
+                  input.disabled = true;  // Disable previously selected option
+                  input.parentElement.style.color = "grey";  // Grey out the label
+              }
+          });
+      }
+  });
+  
+  // Handle form submission
+  document.getElementById('myForm').addEventListener('submit', function(event) {
+      const firstName = document.getElementById('firstName').value.trim();
+      const lastName = document.getElementById('lastName').value.trim();
+      const fullName = firstName + ' ' + lastName;
+  
+      if (!validateName(firstName, lastName)) {
+          alert("Invalid name. Please enter a valid name.");
+          event.preventDefault();
+          return;
+      }
+  
+      // Collect selections to save to cookies
+      const selections = {};
+      document.querySelectorAll('select[data-cookie-id], input[type="checkbox"][data-cookie-id]:checked').forEach(input => {
+          const cookieId = input.getAttribute('data-cookie-id');
+          selections[cookieId] = input.value || input.checked;
+      });
+  
+      // Save the selections in cookies
+      saveSelections(fullName, selections);
+      
+      // Allow form to submit
+  });
+  </script>
+  
 
 
 <!-- Clears form after submit--> 
