@@ -598,26 +598,51 @@ function getCookie(name) {
     return null;
 }
 
+// Helper functions for cookies
+function setCookie(name, value) {
+    // Get the current date and time
+    const now = new Date();
+    
+    // Find the next Tuesday
+    const nextTuesday = new Date();
+    nextTuesday.setDate(now.getDate() + ((9 - now.getDay()) % 7));  // Calculate the next Tuesday
+    
+    // Set the time to 8 AM on that Tuesday
+    nextTuesday.setHours(8, 0, 0, 0);  // 8:00 AM on the next Tuesday
+
+    // Set the expiration time for the cookie
+    const expires = "; expires=" + nextTuesday.toUTCString();
+    
+    // Set the cookie with the calculated expiration time
+    document.cookie = name + "=" + encodeURIComponent(value) + expires + "; path=/";
+}
+
 // Function to delete all cookies for valid names
 function deleteAllCookies() {
-      for (const name of validNames) {
-          const cookieName = name + '_selections';
-          document.cookie = cookieName + '=; Max-Age=-99999999; path=/';  
-      }
-      console.log('All cookies for valid names have been deleted.');
-  }
+    for (const name of validNames) {
+        const cookieName = name + '_selections';
+        document.cookie = cookieName + '=; Max-Age=-99999999; path=/';  
+    }
+    console.log('All cookies for valid names have been deleted.');
+}
 
-  // Function to check if today's day is within the deletion range
-  function checkCookieDeletion() {
-      const today = new Date();
-      const dayOfWeek = today.getDay(); // 0 = Sunday, 1 = Monday, ..., 6 = Saturday
-      const hours = today.getHours(); // Get current hours (0 - 23)
+// Function to check if today's day is within the deletion range
+function checkCookieDeletion() {
+    const today = new Date();
+    const dayOfWeek = today.getDay(); // 0 = Sunday, 1 = Monday, ..., 6 = Saturday
+    const hours = today.getHours(); // Get current hours (0 - 23)
 
-      // Check if today is Tuesday (2) and it's after 8 AM (8)
-      if (dayOfWeek === 2 && hours >= 8) {
-          deleteAllCookies(); // Delete all cookies if within the range
-      }
-  }
+    // Check if today is Tuesday (2) and it's after 8 AM (8)
+    if (dayOfWeek === 2 && hours >= 8) {
+        deleteAllCookies(); // Delete all cookies if within the range
+    }
+}
+
+// Save selections to cookies
+function saveSelections(userName, selections) {
+    setCookie(userName + '_selections', JSON.stringify(selections));  // Use the updated setCookie
+}
+
 
 // Function to validate the name
 function validateName(firstName, lastName) {
