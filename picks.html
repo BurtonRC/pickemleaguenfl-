@@ -751,17 +751,21 @@
   
           // Disable previously selected options, DBs, and PS selections
           document.querySelectorAll('select[data-cookie-id], input[type="checkbox"][data-cookie-id]').forEach(input => {
-              const cookieId = input.getAttribute('data-cookie-id');
-              if (previousSelections[cookieId]) {
-                  if (input.tagName === 'SELECT') {
-                      input.value = previousSelections[cookieId];  // Set previously selected value
-                  } else if (input.type === 'checkbox') {
-                      input.checked = true;  // Check previously selected checkbox
-                  }
-                  input.disabled = true;  // Disable previously selected option
-                  input.parentElement.style.color = "grey";  // Grey out the label
-              }
-          });
+    const cookieId = input.getAttribute('data-cookie-id');
+    console.log("Checking input: ", cookieId, " with value: ", previousSelections[cookieId]); // Debug
+    if (previousSelections[cookieId]) {
+        if (input.tagName === 'SELECT') {
+            input.value = previousSelections[cookieId];  // Set previously selected value
+            console.log("Setting select value: ", input.value);  //Debug
+        } else if (input.type === 'checkbox') {
+            input.checked = true;  // Check previously selected checkbox
+            console.log("Setting checkbox: ", cookieId);  //Debug
+        }
+        input.disabled = true;  // Disable previously selected option
+        input.parentElement.style.color = "grey";  // Grey out the label
+    }
+});
+
       }
   });
   
