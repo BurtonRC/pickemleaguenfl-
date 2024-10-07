@@ -702,7 +702,7 @@
       "Shaun Foley"
   ];
   
-  // Helper functions for cookies
+// Helper functions for cookies
 function setCookie(name, value, days) {
     let expires = "";
     if (days) {
@@ -729,8 +729,9 @@ function validateName(firstName, lastName) {
 
 // Load user selections from cookies
 function loadSelections(userName) {
-    let selections = getCookie(userName + '_selections');
-    return selections ? JSON.parse(selections) : {};
+    const cookieData = getCookie(userName + '_selections');
+    console.log('Cookie data for', userName, ':', cookieData); // Debugging line
+    return cookieData ? JSON.parse(cookieData) : {};
 }
 
 // Save selections to cookies
@@ -738,38 +739,37 @@ function saveSelections(userName, selections) {
     setCookie(userName + '_selections', JSON.stringify(selections), 7);
 }
 
-// Function to load the form with previous selections
-function applySelections(selections) {
-    document.querySelectorAll('select[data-cookie-id], input[type="checkbox"][data-cookie-id]').forEach(input => {
-        const cookieId = input.getAttribute('data-cookie-id');
-        if (selections[cookieId]) {
-            if (input.tagName === 'SELECT') {
-                input.value = selections[cookieId];  // Set previously selected value
-                console.log(`Setting value for select ${cookieId}: ${selections[cookieId]}`);
-            } else if (input.type === 'checkbox') {
-                input.checked = true;  // Check previously selected checkbox
-                console.log(`Setting checked for checkbox ${cookieId}`);
-            }
-            input.disabled = true;  // Disable previously selected option
-            input.parentElement.style.color = "grey";  // Grey out the label
-        }
-    });
-}
-
-// Handle form load and name validation
+// Handle name input change and apply previous selections
 document.getElementById('firstName').addEventListener('input', function(event) {
     const firstName = event.target.value.trim();
     const lastName = document.getElementById('lastName').value.trim();
     const fullName = firstName + ' ' + lastName;
 
     if (validateName(firstName, lastName)) {
+        console.log('Valid name entered:', fullName); // Debugging line
         const previousSelections = loadSelections(fullName);
-        console.log('Previous selections found:', previousSelections);
-        applySelections(previousSelections);
+
+        console.log('Previous selections loaded:', previousSelections); // Debugging line
+
+        // Apply selections and disable the relevant fields
+        document.querySelectorAll('select[data-cookie-id], input[type="checkbox"][data-cookie-id]').forEach(input => {
+            const cookieId = input.getAttribute('data-cookie-id');
+            if (previousSelections[cookieId]) {
+                if (input.type === 'checkbox') {
+                    input.checked = true;
+                } else {
+                    input.value = previousSelections[cookieId];
+                }
+                input.disabled = true;  // Disable the field
+                input.parentElement.style.color = "grey";  // Optional: Grey out label for disabled inputs
+            }
+        });
+    } else {
+        console.log('Invalid name, selections not applied'); // Debugging line
     }
 });
-  
-  // Handle form submission
+
+// Handle form submission
 document.getElementById('myForm').addEventListener('submit', function(event) {
     const firstName = document.getElementById('firstName').value.trim();
     const lastName = document.getElementById('lastName').value.trim();
