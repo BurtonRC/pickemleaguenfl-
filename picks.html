@@ -598,6 +598,27 @@ function getCookie(name) {
     return null;
 }
 
+// Function to delete all cookies for valid names
+function deleteAllCookies() {
+      for (const name of validNames) {
+          const cookieName = name + '_selections';
+          document.cookie = cookieName + '=; Max-Age=-99999999; path=/';  
+      }
+      console.log('All cookies for valid names have been deleted.');
+  }
+
+  // Function to check if today's day is within the deletion range
+  function checkCookieDeletion() {
+      const today = new Date();
+      const dayOfWeek = today.getDay(); // 0 = Sunday, 1 = Monday, ..., 6 = Saturday
+      const hours = today.getHours(); // Get current hours (0 - 23)
+
+      // Check if today is Tuesday (2) and it's after 8 AM (8)
+      if (dayOfWeek === 2 && hours >= 8) {
+          deleteAllCookies(); // Delete all cookies if within the range
+      }
+  }
+
 // Function to validate the name
 function validateName(firstName, lastName) {
     return validNames.includes(firstName.trim() + ' ' + lastName.trim());
@@ -685,6 +706,10 @@ document.getElementById('myForm').addEventListener('submit', function(event) {
 
     // Allow form to submit
 });
+
+// Automatically check for cookie deletion on page load
+window.onload = checkCookieDeletion;
+
 </script>
   
   
