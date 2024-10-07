@@ -691,38 +691,14 @@
 <script>
   // List of valid names
   const validNames = [
-      "Adam Kenny", 
-      "Alan Silk", 
-      "Andrew Donachuk", 
-      "Brad De Ryck", 
-      "Brett Steidl", 
-      "Chris Stenberg", 
-      "Colin Larsen", 
-      "Colm Bolger", 
-      "Conor O'Brien", 
-      "Corey McKay", 
-      "Darren Barabash", 
-      "Daryl Krywonis", 
-      "Donald Van Landeghem", 
-      "Doug Roberts", 
-      "Drew Riddolls", 
-      "Eric Matthies", 
-      "Fran Fitzpatrick", 
-      "Gavin Steidl", 
-      "Ian Silk", 
-      "Jake Giesbrecht", 
-      "John Harper", 
-      "John Wyndels", 
-      "Kong Vong", 
-      "Matt Wyndels", 
-      "Makaila Hardy", 
-      "Nisha Krywonis", 
-      "Noel Leon", 
-      "Paul McGuire", 
-      "Ray Riddolls", 
-      "Rick Halas", 
-      "Roudy Courser", 
-      "Sean Kimmel", 
+      "Adam Kenny", "Alan Silk", "Andrew Donachuk", "Brad De Ryck", 
+      "Brett Steidl", "Chris Stenberg", "Colin Larsen", "Colm Bolger", 
+      "Conor O'Brien", "Corey McKay", "Darren Barabash", "Daryl Krywonis", 
+      "Donald Van Landeghem", "Doug Roberts", "Drew Riddolls", "Eric Matthies", 
+      "Fran Fitzpatrick", "Gavin Steidl", "Ian Silk", "Jake Giesbrecht", 
+      "John Harper", "John Wyndels", "Kong Vong", "Matt Wyndels", 
+      "Makaila Hardy", "Nisha Krywonis", "Noel Leon", "Paul McGuire", 
+      "Ray Riddolls", "Rick Halas", "Roudy Courser", "Sean Kimmel", 
       "Shaun Foley"
   ];
   
@@ -754,11 +730,13 @@
   // Load user selections from cookies
   function loadSelections(userName) {
       let selections = getCookie(userName + '_selections');
+      console.log("Loading selections for: ", userName, " Selections: ", selections);  // Debugging
       return selections ? JSON.parse(selections) : {};
   }
   
   // Save selections to cookies
   function saveSelections(userName, selections) {
+      console.log("Saving selections for: ", userName, " Selections: ", selections);  // Debugging
       setCookie(userName + '_selections', JSON.stringify(selections), 7);
   }
   
@@ -804,14 +782,14 @@
       document.querySelectorAll('select[data-cookie-id], input[type="checkbox"][data-cookie-id]:checked').forEach(input => {
           const cookieId = input.getAttribute('data-cookie-id');
           selections[cookieId] = input.value || input.checked;
+          console.log("Saving selection: ", cookieId, input.value || input.checked);  // Debugging
       });
   
       // Save the selections in cookies
       saveSelections(fullName, selections);
-      
-      // Allow form to submit
   });
   </script>
+  
   
 
 
