@@ -40,7 +40,7 @@ a:hover {
   width: 100%;
   flex-direction: column;
   justify-content: center;
-  padding: 11px;
+  padding: 11px 0;
 }
 
 .top-bar-content {
@@ -735,7 +735,7 @@ ul {
   }*/
 
   .sub-nav {
-    padding: 11px 20px;
+    padding: 11px 0;
   }
 
   .featured-content .vid-sched {
