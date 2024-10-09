@@ -723,7 +723,7 @@ ul {
 
 @media (max-width: 991px) {
   .top-bar {
-    padding: 11px 20px;
+    padding: 11px 0;
   }
 
   .top-bar-content {
