@@ -32,6 +32,8 @@ a:hover {
   flex-direction: column;
   align-items: center;
   max-width: 2190px;
+  padding: 0 20px;
+  margin: 0 20px;
 }
 
 .top-bar {
@@ -723,6 +725,8 @@ ul {
 }
 
 @media (max-width: 991px) {
+  
+ 
   .top-bar {
     padding: 11px 0;
   }
@@ -800,13 +804,14 @@ ul {
 
   .news-grid {
     max-width: 100%;
-    padding: 25px 20px 77px;
+    padding: 25px 0 77px;
   }
 
   .news-row {
     flex-direction: column;
     align-items: stretch;
     gap: 0;
+    padding: 0 30px;
   }
 
   .news-item {
@@ -866,23 +871,24 @@ ul {
   .footer {
     max-width: 100%;
     margin-top: 40px;
-    padding: 15px 20px;
+    padding: 15px 0;
   }
 }
 
 @media (max-width: 768px) {
 
   .sports-news-container {
-    max-width: 440px;
+    max-width: 700px;
     width: 100%;
     margin: 0 auto;
     box-sizing: border-box;
+    padding: 0 10px;
   }
 
   /* General container div styles */
   .container {
       width: 100%;
-      max-width: 440px; /* Container width of 440px */
+      max-width: 700px; /* Container width of 440px */
       margin: 0 auto; /* Center the container horizontally */
   }
 
@@ -896,7 +902,7 @@ ul {
   .category-nav {
       display: block;
       width: 100%;
-      max-width: 440px;
+      max-width: 700px;
       margin: 0 auto; /* Centering the containers */
       padding: 11px 0;
   }
@@ -960,7 +966,7 @@ ul {
       flex-direction: column; /* Stack vertically */
       align-items: stretch;   /* Make sure the items stretch to the container width */
       align-items: center;
-      max-width: 440px;
+      max-width: 700px;
   }
 
   .main-feature-img {
