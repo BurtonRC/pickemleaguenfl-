@@ -724,6 +724,15 @@ ul {
   }
 }
 
+@media (min-width: 991px) {
+
+  .sports-news-container {
+    padding: 0;
+    margin: 0;
+  }
+
+}
+
 @media (max-width: 991px) {
   
  
