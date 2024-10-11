@@ -647,30 +647,32 @@
 }
 
   
-  // Function to load previous selections from cookies
-  function loadSelections(userName) {
-      const cookieData = getCookie(userName + '_selections');
-      console.log('Cookie data for', userName, ':', cookieData); // Debugging line
-      return cookieData ? JSON.parse(cookieData) : {};
-  }
+  // Function to load previous selections from cookies (case-insensitive)
+function loadSelections(userName) {
+    const normalizedUserName = userName.toLowerCase();
+    const cookieData = getCookie(normalizedUserName + '_selections');
+    console.log('Cookie data for', normalizedUserName, ':', cookieData); // Debugging line
+    return cookieData ? JSON.parse(cookieData) : {};
+}
   
-  // Function to apply the selections from cookies
-  function applySelections(fullName) {
-      const previousSelections = loadSelections(fullName);
-      console.log('Previous selections loaded:', previousSelections);  // Debugging line
+  // Function to apply the selections from cookies (case-insensitive)
+function applySelections(fullName) {
+    const normalizedFullName = fullName.toLowerCase();
+    const previousSelections = loadSelections(normalizedFullName);
+    console.log('Previous selections loaded for', normalizedFullName, ':', previousSelections);  // Debugging line
   
-      // Apply selections and disable the relevant fields
-      document.querySelectorAll('select[data-cookie-id], input[type="checkbox"][data-cookie-id]').forEach(input => {
-          const cookieId = input.getAttribute('data-cookie-id');
-          if (previousSelections[cookieId]) {
-              if (input.type === 'checkbox') {
-                  input.checked = true;
-              } else {
-                  input.value = previousSelections[cookieId];
-              }
-              input.disabled = true;  // Disable the field
-              input.parentElement.style.color = "grey";  // Optional: Grey out label for disabled inputs
-          }
+    // Apply selections and disable the relevant fields
+    document.querySelectorAll('select[data-cookie-id], input[type="checkbox"][data-cookie-id]').forEach(input => {
+        const cookieId = input.getAttribute('data-cookie-id');
+        if (previousSelections[cookieId]) {
+            if (input.type === 'checkbox') {
+                input.checked = true;
+            } else {
+                input.value = previousSelections[cookieId];
+            }
+            input.disabled = true;  // Disable the field
+            input.parentElement.style.color = "grey";  // Optional: Grey out label for disabled inputs
+         }
       });
   }
   
@@ -692,11 +694,12 @@
   document.getElementById('firstName').addEventListener('input', handleNameInput);
   document.getElementById('lastName').addEventListener('input', handleNameInput);
   
-  // Handle form submission
+  // Handle form submission (case-insensitive cookie storage)
   document.getElementById('myForm').addEventListener('submit', function(event) {
       const firstName = document.getElementById('firstName').value.trim();
       const lastName = document.getElementById('lastName').value.trim();
       const fullName = firstName + ' ' + lastName;
+      const normalizedFullName = fullName.toLowerCase();  // Normalize name to lowercase
   
       // **Addition for name validation on submission**
       if (!validateName(firstName, lastName)) {
@@ -726,9 +729,9 @@
           }
       });
   
-      // Save the selections in cookies
-      setCookie(fullName + '_selections', JSON.stringify(selections), 7);
-      console.log('Selections saved:', selections);
+      // Save the selections in cookies using the normalized name
+      setCookie(normalizedFullName + '_selections', JSON.stringify(selections), 7);
+      console.log('Selections saved for', normalizedFullName, ':', selections);
       
       // Allow form to submit
   });
