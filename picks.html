@@ -640,10 +640,12 @@
       return null;
   }
   
-  // Function to validate the name
+  // Function to validate the name (case-insensitive)
   function validateName(firstName, lastName) {
-      return validNames.includes(firstName.trim() + ' ' + lastName.trim());
-  }
+      const fullNameInput = (firstName.trim() + ' ' + lastName.trim()).toLowerCase();
+      return validNames.some(validName => validName.toLowerCase() === fullNameInput);
+}
+
   
   // Function to load previous selections from cookies
   function loadSelections(userName) {
