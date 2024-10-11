@@ -873,8 +873,10 @@ ul {
   }
 
   .schedule-list {
-    padding: 21px 20px 38px;
+    padding: 21px 20px 9px;
     font-size: 11px;
+    letter-spacing: .01px;
+    line-height: 2.43;
   }
 
   .footer {
@@ -954,7 +956,7 @@ ul {
   .video-player {
       display: block;
       width: 100%;
-      max-width: 440px;
+      max-width: 700px;
       margin: 15px auto; /* Centering the containers */
   }
 
@@ -965,7 +967,7 @@ ul {
   .vid-sched {
       display: block;
       width: 100%;
-      max-width: 440px;
+      max-width: 700px;
       margin: 0px auto; /* Centering the containers */
   }
 
