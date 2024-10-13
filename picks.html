@@ -702,6 +702,12 @@ function applySelections(fullName) {
                 input.value = previousSelections[cookieId];
             }
             input.disabled = true;  // Disable the field
+
+            // Set background color for disabled dropdowns
+            if (input.tagName.toLowerCase() === 'select') {
+                input.style.backgroundColor = "#d1e7dd";  // Light green background for disabled dropdowns
+            }
+
             input.parentElement.style.color = "grey";  // Optional: Grey out label for disabled inputs
          }
       });
