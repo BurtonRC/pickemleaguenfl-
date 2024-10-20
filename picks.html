@@ -632,7 +632,21 @@ syncToggleAndDropdown("toggle-cap", "dropdown-cap", "CaP(db)");
 
 </script>
 
-
+<script>
+  // Clears form after submit and resets dropdown background colors
+  document.getElementById('myForm').addEventListener('submit', function() {
+      setTimeout(() => {
+        this.reset();  // Reset the form after submission
+  
+        // Reset the background colors of all dropdowns
+        document.querySelectorAll('.team-select').forEach(select => {
+            select.style.backgroundColor = "";  // Reset background to default
+        });
+  
+      }, 500);  // Adjust the delay as needed
+  });
+  </script>
+  
 
 
 
