@@ -87,7 +87,7 @@
 
    <div class="box">
     <div class="weekTable">    
-      <form id="myForm" method="post" action="https://script.google.com/macros/s/AKfycbxe40OIl13V0qXFqakJg7eWKkrcQA25r8xOUOtHCH0MS4-Jzffgs0gneO8z7yiJwqQ/exec">
+      <form id="myForm" method="post" action="https://script.google.com/macros/s/AKfycbyX-B9DGhHEui7lDIkqfODiFBsm-CMAGtXHoSIY1ABTTPxI0aqRuus9bp3gPpOG-i8/exec">
             <div>
             <table>
                 <tbody>
@@ -119,140 +119,155 @@
                         <tbody>
 
                           <tr>
-                            <td>Denver Broncos @ New Orleans Saints</td>
+                            <td>Minnesota Vikings @ Los Angeles Rams</td>
                             <td><strong>Thur</strong></td>
                             <td></td>
                             <td></td>
                             <td>
                                 <select class="team-select" data-cookie-id="game1" name="Games_1">
                                     <option value="">--Select Team--</option>
-                                    <option value="Denver">Denver Broncos</option>
-                                    <option value="New Orleans">New Orleans Saints</option>
+                                    <option value="Minnesota">Minnesota Vikings</option>
+                                    <option value="LA Rams">Los Angeles Rams</option>
                                 </select>
                             </td>
                           </tr>
 
                           <tr>
-                            <td style="line-height: 1.5;"><strong>New Eng Patriots(db)</strong> @ Jacks Jags
-                              <br><strong>London / 8:30 (CST) kickoff</strong>
+                            <td style="line-height: 1.5;">Baltimore Ravens @ <strong>Cleveland Browns(db)</strong>
+                              <br><strong>Disruptor (PS) GOTWk (Cleveland +9.5)</strong>
                             </td>
-                            <td>Sun</td>
-                            <td>
-                              <span>NeP(db)</span>  <br><br>
-                              <div class="slide-box">
-                                <label class="switch">
-                                <!-- Make sure to change and align DriveBy no. so it enters in the right game section -->
-                                <input type="checkbox" id="toggle-nep" name="DriveBy_2" value="NeP(db)" data-cookie-id="toggle-nep"/><div></div></label>
-                              </div>
-                            </td>
-                            <td></td>
-                            <td>
-                                <select class="team-select" id="dropdown-nep" data-cookie-id="game2" name="Games_2">
-                                    <option value="">--Select Team--</option>
-                                    <option value="NeP(db)">New Eng Patriots(db)</option>
-                                    <option value="Jacksonville">Jacksonville Jags</option>
-                                </select>
-                            </td>  
-                          </tr>
-
-                          <tr>
-                            <td >Seattle Seahawks @ Atlanta Falcons</td>
-                            <td>Sun</td>
-                            <td></td>                           
-                            <td></td>
-                            <td>
-                                <select class="team-select" data-cookie-id="game3" name="Games_3">
-                                    <option value="">--Select Team--</option>
-                                    <option value="Seattle">Seattle Seahawks</option>
-                                    <option value="Atlanta">Atlanta Falcons</option>
-                                </select>
-                            </td>
-                          </tr>
-
-                          <tr>
-                            <td><strong>Tennessee Titans(db)</strong> @ Buffalo Bills</td>
-                            <td>Sun</td>
-                            <td>
-                              <span>TnT(db)</span>  <br><br>
-                              <div class="slide-box">
-                                <label class="switch">
-                                <input type="checkbox" id="toggle-tnt" name="DriveBy_4" value="TnT(db)" data-cookie-id="toggle-tnt"/><div></div></label>
-                              </div>
-                            </td>                           
-                            <td></td>
-                            <td>
-                                <select class="team-select" id="dropdown-tnt" data-cookie-id="game4" name="Games_4">
-                                    <option value="">--Select Team--</option>
-                                    <option value="TnT(db)">Tennessee Titans(db)</option>
-                                    <option value="Buffalo">Buffalo Bills</option>
-                                </select>
-                            </td>
-                          </tr>
-
-                          <tr>
-                            <td>Cinci Bengals @ <strong>Cleveland Browns(db)</strong></td>
                             <td>Sun</td>
                             <td>
                               <span>CvB(db)</span>  <br><br>
                               <div class="slide-box">
                                 <label class="switch">
-                                <input type="checkbox" id="toggle-cvb" name="DriveBy_5" value="CvB(db)" data-cookie-id="toggle-cvb"/><div></div></label>
+                                <!-- Make sure to change and align DriveBy no. so it enters in the right game section -->
+                                <input type="checkbox" id="toggle-cvb" name="DriveBy_2" value="CvB(db)" data-cookie-id="toggle-cvb"/><div></div></label>
                               </div>
-                            </td>                            
+                            </td>
+                            <td>
+                              <label for="CvBPs">CvB +9.5
+                              <!-- Make sure to change and align pointSpread no. so it enters in the right game section -->
+                              <select class="team-select" id="CvBPs" data-cookie-id="pointspread2" name="PointSpread_2">
+                                  <option value="">--Select Cover--</option>
+                                  <option value="Cleveland Covers">Cleveland covers +9.5</option>
+                                  <option value="Baltimore Covers">Baltimore covers -9.5</option>
+                              </select>
+                              </label>
+                            </td>
+                            <td>
+                                <select class="team-select" id="dropdown-cvb" data-cookie-id="game2" name="Games_2">
+                                    <option value="">--Select Team--</option>
+                                    <option value="Baltimore">Baltimore Ravens</option>
+                                    <option value="CvB(db)">Cleveland Browns</option>
+                                </select>
+                            </td>  
+                          </tr>
+
+                          <tr>
+                            <td><strong>Tennessee Titans(db)</strong> @ Detroit Lions</td>
+                            <td>Sun</td>
+                            <td>
+                              <span>TnT(db)</span>  <br><br>
+                              <div class="slide-box">
+                                <label class="switch">
+                                <input type="checkbox" id="toggle-tnt" name="DriveBy_3" value="TnT(db)" data-cookie-id="toggle-tnt"/><div></div></label>
+                              </div>
+                            </td>                           
                             <td></td>
                             <td>
-                                <select class="team-select" id="dropdown-cvb" data-cookie-id="game5" name="Games_5">
+                                <select class="team-select" id="dropdown-tnt" data-cookie-id="game3" name="Games_3">
                                     <option value="">--Select Team--</option>
-                                    <option value="Cincinnati">Cincinnati Bengals</option>
-                                    <option value="CvB(db)">Cleveland Browns(db)</option>
+                                    <option value="TnT(db)">Tennessee Titans</option>
+                                    <option value="Detroit">Detroit Lions</option>
                                 </select>
                             </td>
                           </tr>
 
                           <tr>
-                            <td>Houston Texans @ Green Bay Packers</td>
+                            <td><strong>Indianapolis Colts(db)</strong> @ Houston Texans</td>
+                            <td>Sun</td>
+                            <td>
+                              <span>InC(db)</span>  <br><br>
+                              <div class="slide-box">
+                                <label class="switch">
+                                <input type="checkbox" id="toggle-inc" name="DriveBy_4" value="InC(db)" data-cookie-id="toggle-inc"/><div></div></label>
+                              </div>
+                            </td>                           
+                            <td></td>
+                            <td>
+                                <select class="team-select" id="dropdown-inc" data-cookie-id="game4" name="Games_4">
+                                    <option value="">--Select Team--</option>
+                                    <option value="InC(db)">Indianapolis Colts</option>
+                                    <option value="Houston Texans">Houston Texans</option>
+                                </select>
+                            </td>
+                          </tr>
+
+                          <tr>
+                            <td>Green Bay Packers @ Jacksonville Jaguars</td>
+                            <td>Sun</td>
+                            <td></td>                            
+                            <td></td>
+                            <td>
+                                <select class="team-select" data-cookie-id="game5" name="Games_5">
+                                    <option value="">--Select Team--</option>
+                                    <option value="Green Bay">Green Bay Packers</option>
+                                    <option value="Jacksonville">Jacksonville Jaguars</option>
+                                </select>
+                            </td>
+                          </tr>
+
+                          <tr>
+                            <td>Arizona Cardinals @ Miami Dolphins</td>
                             <td>Sun</td>                              
                             <td></td>
                             <td></td>
                             <td>
                                 <select class="team-select" data-cookie-id="game6" name="Games_6">
                                     <option value="">--Select Team--</option>
-                                    <option value="Houston">Houston Texans</option>
-                                    <option value="Green Bay">Green Bay Packers</option>
+                                    <option value="Arizona">Arizona Cardinals</option>
+                                    <option value="Miami">Miami Dolphins</option>
                                 </select>
                             </td>
                           </tr>
 
                           <tr>
-                            <td>Miami Dolphins @ Indianapolis Colts</td>
+                            <td>New York Jets @ <strong>New Eng Patriots(db)</strong></td>
                             <td>Sun</td>                            
-                            <td></td>
+                            <td>
+                              <span>NEP(db)</span>  <br><br>
+                              <div class="slide-box">
+                                <label class="switch">
+                                <input type="checkbox" id="toggle-nep" name="DriveBy_7" value="NEP(db)" data-cookie-id="toggle-nep"/><div></div></label>
+                              </div>
+                            </td>
                             <td></td>
                             <td>
-                                <select class="team-select" data-cookie-id="game7" name="Games_7">
+                                <select class="team-select" id="dropdown-nep" data-cookie-id="game7" name="Games_7">
                                     <option value="">--Select Team--</option>
-                                    <option value="Miami">Miami Dolphins</option>
-                                    <option value="Indianapolis">Indianapolis Colts</option>
+                                    <option value="NY Jets">New York Jets</option>
+                                    <option value="NEP(db)">New England Patriots</option>
                                 </select>
                             </td>
                           </tr>
 
                           <tr>
-                            <td>Detroit Lions @ Minnesota Vikings</td>
+                            <td>Atlanta Falcons @ Tampa Bay Buccaneers</td>
                             <td>Sun</td>    
                             <td></td>
                             <td></td>
                             <td>
                                 <select class="team-select" data-cookie-id="game8" name="Games_8">
                                     <option value="">--Select Team--</option>
-                                    <option value="Detroit">Detroit Lions</option>
-                                    <option value="Minnesota">Minnesota Vikings</option>
+                                    <option value="Atlanta">Atlanta Falcons</option>
+                                    <option value="Tampa Bay">Tampa Bay Buccaneers</option>
                                 </select>
                             </td>
                           </tr>
 
                           <tr>
-                            <td>Philadelphia Eagles @ New York Giants</td>
+                            <td>Philadelphia Eagles @ Cincinnati Bengals</td>
                             <td>Sun</td>                            
                             <td></td>
                             <td></td>
@@ -260,131 +275,132 @@
                                 <select class="team-select" data-cookie-id="game9" name="Games_9">
                                     <option value="">--Select Team--</option>
                                     <option value="Philadelphia">Philadelphia Eagles</option>
-                                    <option value="NY Giants">New York Giants</option>
+                                    <option value="Cincinnati">Cincinnati Bengals</option>
                                 </select>
                             </td>
                           </tr>
 
                           <tr>
-                            <td><strong>Las Vegas Raiders(db)</strong> @ Los Angeles Rams</td>
+                            <td><strong>NO Saints(db)</strong> @ Los Angeles Chargers</td>
                             <td>Sun</td>                            
                             <td>
-                              <span>LvR(db)</span>  <br><br>
+                              <span>NOS(db)</span>  <br><br>
                               <div class="slide-box">
                                 <label class="switch">
-                                <input type="checkbox" id="toggle-lvr" name="DriveBy_10" value="LvR(db)" data-cookie-id="toggle-lvr"/><div></div></label>
+                                <input type="checkbox" id="toggle-nos" name="DriveBy_10" value="NOS(db)" data-cookie-id="toggle-nos"/><div></div></label>
                               </div>
                             </td>
                             <td></td>
                             <td>
-                                <select class="team-select" id="dropdown-lvr" data-cookie-id="game10" name="Games_10">
+                                <select class="team-select" id="dropdown-nos" data-cookie-id="game10" name="Games_10">
                                     <option value="">--Select Team--</option>
-                                    <option value="LvR(db)">Las Vegas Raiders(db)</option>
-                                    <option value="LA Rams">Los Angeles Rams</option>
+                                    <option value="NOS(db)">New Orleans Saints</option>
+                                    <option value="LA Chargers">Los Angeles Chargers</option>
                                 </select>
                             </td>
                           </tr>
 
                           <tr>
-                            <td><strong>Carolina Panthers(db)</strong> @ Wash Commanders</td>
+                            <td>Buffalo Bills @ Seattle Seahawks</td>
                             <td>Sun</td>
-                            <td>
-                              <span>CaP(db)</span>  <br><br>
-                              <div class="slide-box">
-                                <label class="switch">
-                                <input type="checkbox" id="toggle-cap" name="DriveBy_11" value="CaP(db)" data-cookie-id="toggle-cap"/><div></div></label>
-                              </div>
-                            </td>
+                            <td></td>
                             <td></td>
                             <td>
-                                <select class="team-select" id="dropdown-cap" data-cookie-id="game11" name="Games_11">
+                                <select class="team-select" data-cookie-id="game11" name="Games_11">
                                     <option value="">--Select Team--</option>
-                                    <option value="CaP(db)">Carolina Panthers(db)</option>
+                                    <option value="Buffalo">Buffalo Bills</option>
+                                    <option value="Seattle">Seattle Seahawks</option>
+                                </select>
+                            </td>
+                          </tr>
+
+                          <tr>
+                            <td>Chicago Bears @ Wash Commanders</td>
+                            <td>Sun</td>                                                                              
+                            <td></td>
+                            <td></td>
+                            <td>
+                                <select class="team-select" name="Games_12" data-cookie-id="game12">
+                                    <option value="">--Select Team--</option>
+                                    <option value="Chicago">Chicago Bears</option>
                                     <option value="Washington">Wash Commanders</option>
                                 </select>
                             </td>
                           </tr>
 
                           <tr>
-                            <td style="line-height: 1.5;">Kansas City Chiefs @ San Fran 49ers
-                              <br><strong>Disruptor (PS) GOTWk (KC +1.5)</strong>
+                            <td>Carolina Panthers @ Denver Broncos</td>
+                            <td>Sun</td>                           
+                            <td>
+                              <span>CaP(db)</span>  <br><br>
+                              <div class="slide-box">
+                                <label class="switch">
+                                <input type="checkbox" id="toggle-cap" name="DriveBy_13" value="CaP(db)" data-cookie-id="toggle-cap"/><div></div></label>
+                              </div>
                             </td>
-                            <td>Sun</td>                                                                              
                             <td></td>
                             <td>
-                              <label for="KcCPs">KcC +1.5
-                              <!-- Make sure to change and align pointSpread no. so it enters in the right game section -->
-                              <select class="team-select" id="KcCPs" data-cookie-id="pointspread12" name="PointSpread_12">
-                                  <option value="">--Select Cover--</option>
-                                  <option value="KC Covers">KC covers +1.5</option>
-                                  <option value="San Fran Covers">San Fran covers -1.5</option>
-                              </select>
-                              </label>
-                          </td>
+                                <select class="team-select" id="dropdown-cap" data-cookie-id="game13" name="Games_13">
+                                    <option value="">--Select Team--</option>
+                                    <option value="CaP(db)">Carolina Panthers</option>
+                                    <option value="Denver">Denver Broncos</option>
+                                </select>
+                            </td>
+                          </tr>
+
+                          <tr>
+                            <td>Kansas City Chiefs @ Las Vegas Raiders</td>
+                            <td>Sun</td>
                             <td>
-                                <select class="team-select" name="Games_12" data-cookie-id="game12">
+                              <span>LvR(db)</span>  <br><br>
+                              <div class="slide-box">
+                                <label class="switch">
+                                <input type="checkbox" id="toggle-lvr" name="DriveBy_14" value="LvR(db)" data-cookie-id="toggle-lvr"/><div></div></label>
+                              </div>
+                            </td>                            
+                            <td></td>
+                            <td>
+                                <select class="team-select" id="dropdown-lvr" data-cookie-id="game14" name="Games_14">
                                     <option value="">--Select Team--</option>
                                     <option value="Kansas City">Kansas City Chiefs</option>
-                                    <option value="San Fran">San Fran 49ers</option>
+                                    <option value="LvR(db)">Las Vegas Raiders</option>
                                 </select>
                             </td>
                           </tr>
 
                           <tr>
-                            <td>New York Jets @ Pittsburgh Steelers</td>
-                            <td>Sun</td>                           
-                            <td></td>
-                            <td></td>
-                            <td>
-                                <select class="team-select" data-cookie-id="game13" name="Games_13">
-                                    <option value="">--Select Team--</option>
-                                    <option value="NY Jets">New York Jets</option>
-                                    <option value="Pittsburgh">Pittsburgh Steelers</option>
-                                </select>
-                            </td>
-                          </tr>
-
-                          <tr>
-                            <td>Baltimore Ravens @ TB Buccaneers</td>
-                            <td><strong>Mon</strong></td>
-                            <td></td>                            
-                            <td></td>
-                            <td>
-                                <select class="team-select" data-cookie-id="game14" name="Games_14">
-                                    <option value="">--Select Team--</option>
-                                    <option value="Baltimore">Baltimore Ravens</option>
-                                    <option value="Tampa Bay">Tampa Bay Bucs</option>
-                                </select>
-                            </td>
-                          </tr>
-
-                          <tr>
-                            <td>LA Chargers @ Arizona Cardinals</td>
-                            <td><strong>Mon</strong></td>
+                            <td>Dallas Cowboys @ San Francisco 49ers</td>
+                            <td>Sun</td>
                             <td></td>                           
                             <td></td>
                             <td>
                                 <select class="team-select" data-cookie-id="game15" name="Games_15">
                                     <option value="">--Select Team--</option>
-                                    <option value="LA Chargers">LA Chargers</option>
-                                    <option value="Arizona">Arizona Cardinals</option>
+                                    <option value="Dallas">Dallas Cowboys</option>
+                                    <option value="San Francisco">San Francisco 49ers</option>
                                 </select>
                             </td>
                           </tr>
 
-                          <!--<tr>
-                            <td>Seattle Seahawks @ Detroit Lions</td>
-                            <td>Mon</td>
-                            <td></td>                            
+                          <tr>
+                            <td><strong>New York Giants(db)</strong> @ Pittsburgh Steelers</td>
+                            <td><strong>Mon</strong></td>
+                            <td>
+                              <span>NYG(db)</span>  <br><br>
+                              <div class="slide-box">
+                                <label class="switch">
+                                <input type="checkbox" id="toggle-nyg" name="DriveBy_16" value="NYG(db)" data-cookie-id="toggle-nyg"/><div></div></label>
+                              </div>
+                            </td>                            
                             <td></td>
                             <td>
-                                <select class="team-select" data-cookie-id="game16" name="Games_16">
+                                <select class="team-select" id="dropdown-nyg" data-cookie-id="game16" name="Games_16">
                                     <option value="">--Select Team--</option>
-                                    <option value="Seattle">Seattle Seahawks</option>
-                                    <option value="Detroit">Detroit Lions</option>
+                                    <option value="NYG(db)">New York Giants</option>
+                                    <option value="Pittsburgh">Pittsburgh Steelers</option>
                                 </select>
                             </td>
-                          </tr>-->
+                          </tr>
 
                           <tr style="display: none;">
                             <td>Survivor Selection:</td>
@@ -456,35 +472,44 @@
       <div class="news-row">
         <article class="news-item">
           <div class="news-content">
-            <img src="./img/news22.jpg" alt="Davante Adams 'happy' to be on Jets after trade from Raiders" class="news-image" />
+            <img src="./img/news28.jpg" alt="Chiefs acquiring WR DeAndre Hopkins in trade with Titans" class="news-image" />
             <div class="news-tag">News</div>
-            <time datetime="2024-10-16" class="feature-date">Oct 16, 2024</time>
-            <h3 class="news-title">Davante Adams 'happy' to be on Jets after trade from Raiders</h3>
-            <p class="news-summary">Adams isn't waiting long to get back out there, either, telling reporters Wednesday he'll definitely "be able to roll" in Week 7 for the Jets after missing his final three games with the Raiders nursing a hamstring injury.
+            <time datetime="2024-10-23" class="feature-date">Oct 23, 2024</time>
+            <h3 class="news-title">Chiefs acquiring WR DeAndre Hopkins in trade with Titans</h3>
+            <p class="news-summary">The Chiefs are finalizing a deal with the Tennessee Titans to acquire star receiver DeAndre Hopkins.The willingness for Tennessee to eat some of Hopkins' contract helped push the deal over the finish line for the Chiefs, who sit in the bottom quarter in terms of cap space, per Over The Cap.
               <br><br>
-              "It's been a roller coaster, for sure. It's a weird thing to say that I'm happy, but obviously it was time for a change," Adams said. "This whole thing transpired a little weird, but at the end of the day, we're in a better place. I think that the  Raiders are in a better place, as well. Everybody can kinda move on."</p>
+              Adding the five-time Pro Bowler is a massive move for the 6-0 Chiefs as they chase a third consecutive Super Bowl. K.C.'s offseason plan to revamp its receiver corps went awry. Hollywood Brown got injured before the season. Rashee Rice suffered a knee injury in Week 4. Then JuJu Smith-Schuster went down with a knee injury last week.
+              <br><br>
+              Adding Hopkins gives Mahomes a go-to target who can win on the outside and slots the rest of the crew into more comfortable roles. His presence allows Worthy to stretch the field and opens up the middle for Kelce.</p>
           </div>
         </article>
         <article class="news-item">
           <div class="news-content">
-            <img src="./img/news23.jpg" alt="NFL approves Tom Brady's bid to become ltd partner of LV Raiders" class="news-image" />
+            <img src="./img/news29.jpg" alt="Washington Commanders in final round for mascot logo" class="news-image" />
             <div class="news-tag">News</div>
             <time datetime="2024-10-15" class="feature-date">Oct 15, 2024</time>
-            <h3 class="news-title">NFL approves Tom Brady's bid to become ltd partner of LV Raiders</h3>
-            <p class="news-summary">Seven-time Super Bowl champion quarterback Tom Brady has been approved by NFL ownership as a limited partner of the Las Vegas Raiders, NFL Network Insider Ian Rapoport reported on Tuesday.
+            <h3 class="news-title">Washington Commanders in final round for mascot logo</h3>
+            <p class="news-summary">Michael Meyers had been in talks with the Washington Commandeers to licence his likeness for the team brand.
               <br><br>
-              Brady and his partner now hold 10% in the Raiders with Brady personally holding a 5% stake.
+              Adam Peters says, "Michael represents a determination and single mindedness not to quit and keep going regardless of the obstacles." Adam also highlighted Michael's presence as formidable and a man of few words.
               <br><br>
-              "It's great that Tom Brady wants to invest in the NFL," NFL Commissioner Roger Goodell said Tuesday at the Fall League Meeting in Atlanta. "He cares deeply about this game. He believes in its future, and I think that's just a signal of that."</p>
+              This report can neither be confirmed  or denied by the JWPL as authentic.
+              <br><br>
+              <strong>HAPPY HALLOWEEN!</strong> 🧟‍♂️🧟‍♀️🧛‍♂️🧛‍♀️ </p>
           </div>
         </article>
         <article class="news-item">
           <div class="news-content">
-            <img src="./img/news24.jpg" alt="Dolphins HC says he expects Tua to play again in 2024 season" class="news-image" />
+            <img src="./img/news30.jpg" alt="RB Alvin Kamara signs 2 yr, $24.5m contract ext with Saints" class="news-image" />
             <div class="news-tag">News</div>
-            <time datetime="2024-10-14" class="feature-date">Oct 14, 2024</time>
-            <h3 class="news-title">Dolphins HC says he expects Tua to play again in 2024 season</h3>
-            <p class="news-summary">Quarterback Tua Tagovailoa, who currently is on injured reserve after suffering a concussion in Week 2, is expected to resume playing in 2024, head coach Mike McDaniel told reporters on Monday. This marked the first time since Tagovailoa's concussion that McDaniel suggested he could return to the field this season."</p>
+            <time datetime="2024-10-22" class="feature-date">Oct 22, 2024</time>
+            <h3 class="news-title">RB Alvin Kamara signs 2 yr, $24.5m contract ext with Saints</h3>
+            <p class="news-summary">Kamara and the New Orleans Saints have agreed to a two-year, $24.5 million extension which will put him under contract through the 2026 season.
+              <br><br>
+              The deal includes over $22 million guaranteed and the $1.5 million in incentives makes it worth up to $26 million.
+              <br><br>
+              The Saints will save roughly $18 million on the 2025 salary cap with Kamara's new deal in place.
+            </p>
           </div>
         </article>
       </div>
@@ -529,7 +554,7 @@
       formObject[key] = value;
     });
 
-    fetch('https://script.google.com/macros/s/AKfycbxe40OIl13V0qXFqakJg7eWKkrcQA25r8xOUOtHCH0MS4-Jzffgs0gneO8z7yiJwqQ/exec', {
+    fetch('https://script.google.com/macros/s/AKfycbyX-B9DGhHEui7lDIkqfODiFBsm-CMAGtXHoSIY1ABTTPxI0aqRuus9bp3gPpOG-i8/exec', {
       method: 'post',
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded',
@@ -613,24 +638,38 @@ function syncToggleAndDropdown(toggleId, dropdownId, teamValue) {
     updateDropdownBackground();
 }
 
-// Synchronize the third pair (NEP)
-syncToggleAndDropdown("toggle-nep", "dropdown-nep", "NeP(db)");
-
-// Synchronize the first pair (TnT)
-syncToggleAndDropdown("toggle-tnt", "dropdown-tnt", "TnT(db)");
-
-// Synchronize the fourth pair (CvB)
+// Synchronize (CvB)
 syncToggleAndDropdown("toggle-cvb", "dropdown-cvb", "CvB(db)");
 
-// Synchronize the second pair (AzC)
+// Synchronize (TnT)
+syncToggleAndDropdown("toggle-tnt", "dropdown-tnt", "TnT(db)");
+
+// Synchronize (InC)
+syncToggleAndDropdown("toggle-inc", "dropdown-inc", "InC(db)");
+
+// Synchronize (NEP)
+syncToggleAndDropdown("toggle-nep", "dropdown-nep", "NEP(db)");
+
+// Synchronize (NOS)
+syncToggleAndDropdown("toggle-nos", "dropdown-nos", "NOS(db)");
+
+// Synchronize (CaP)
+syncToggleAndDropdown("toggle-cap", "dropdown-cap", "CaP(db)");
+
+// Synchronize (LvR)
 syncToggleAndDropdown("toggle-lvr", "dropdown-lvr", "LvR(db)");
 
-// Synchronize the fifth pair (CaP)
-syncToggleAndDropdown("toggle-cap", "dropdown-cap", "CaP(db)");
+// Synchronize (NYG)
+syncToggleAndDropdown("toggle-nyg", "dropdown-nyg", "NYG(db)");
+
+
 
 // Add more pairs as necessary using the same pattern
 
 </script>
+
+<!-- Clears form after submit--> 
+
 
 <script>
   // Clears form after submit and resets dropdown background colors
