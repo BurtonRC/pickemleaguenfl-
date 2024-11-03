@@ -323,27 +323,30 @@ const firebaseConfig = {
   const q = query(collection(db, 'comments'), where('page', '==', pageIdentifier), orderBy('timestamp', 'desc'));
 
   onSnapshot(q, (snapshot) => {
-      const commentsBox = document.getElementById('comments-box');
-      commentsBox.innerHTML = ''; // Clear previous comments
+    const commentsBox = document.getElementById('comments-box');
+    commentsBox.innerHTML = ''; // Clear previous comments
 
-      snapshot.forEach((docSnap) => {
-          const comment = docSnap.data();
-          const commentId = docSnap.id; // Get the document ID
-          const timestamp = comment.timestamp.toDate(); // Convert to JS Date
+    if (snapshot.empty) {
+        console.log("No comments found.");
+    } else {
+        snapshot.forEach((docSnap) => {
+            const comment = docSnap.data();
+            const commentId = docSnap.id; // Get the document ID
+            const timestamp = comment.timestamp ? comment.timestamp.toDate() : new Date(); // Check timestamp existence
 
-          const escapedCommentText = comment.comment.replace(/'/g, "\\'"); // Escape single quotes
+            const commentElement = document.createElement('div');
+            commentElement.innerHTML = `
+                <strong>${comment.name}</strong> (${timestamp.toLocaleString()}):
+                <p>${comment.comment}</p>
+                <button class="hidden" onclick="editComment('${commentId}', '${escapedCommentText}')">Edit</button>
+                <button class="hidden" onclick="deleteComment('${commentId}')">Delete</button>
+                <hr>
+            `;
+            commentsBox.appendChild(commentElement);
+        });
+    }
+});
 
-          const commentElement = document.createElement('div');
-          commentElement.innerHTML = `
-              <strong>${comment.name}</strong> (${timestamp.toLocaleString()}):
-              <p>${comment.comment}</p>
-              <button class="hidden" onclick="editComment('${commentId}', '${escapedCommentText}')">Edit</button>
-              <button class="hidden" onclick="deleteComment('${commentId}')">Delete</button>
-              <hr>
-          `;
-          commentsBox.appendChild(commentElement);
-      });
-  });
 
   // Handle form submission
   document.getElementById('commentForm').addEventListener('submit', async function(e) {
