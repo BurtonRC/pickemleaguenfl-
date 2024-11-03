@@ -300,12 +300,14 @@
 }
   </script>
 
+<!-- Comments -->
+
 <script type="module">
   import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
-  import { getFirestore, collection, addDoc, updateDoc, deleteDoc, query, orderBy, where, onSnapshot, doc } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js";
+  import { getFirestore, collection, addDoc, getDocs, query, orderBy, where, onSnapshot } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js";
 
-// Firebase configuration
-const firebaseConfig = {
+  // Firebase configuration
+  const firebaseConfig = {
     apiKey: "AIzaSyCYrLl1WIblJhDUi1lBt6sCHvdl37lhHgE",
     authDomain: "my-comments-section.firebaseapp.com",
     projectId: "my-comments-section",
@@ -318,35 +320,54 @@ const firebaseConfig = {
   const app = initializeApp(firebaseConfig);
   const db = getFirestore(app);
 
+  // Define loadComments globally
+  async function loadComments() {
+      const pageIdentifier = window.location.pathname;
+
+      console.log("Loading comments for:", pageIdentifier);
+      const commentsBox = document.getElementById('comments-box');
+      commentsBox.innerHTML = ''; // Clear previous comments
+
+      try {
+          const q = query(collection(db, 'comments'), where('page', '==', pageIdentifier), orderBy('timestamp', 'desc'));
+          const querySnapshot = await getDocs(q);
+
+          querySnapshot.forEach((doc) => {
+              const comment = doc.data();
+              const commentElement = document.createElement('div');
+              const timestamp = comment.timestamp.toDate(); // Convert to JS Date
+              commentElement.innerHTML = `
+                  <strong>${comment.name}</strong> (${timestamp.toLocaleString()}):
+                  <p>${comment.comment}</p>
+                  <hr>
+              `;
+              commentsBox.appendChild(commentElement);
+          });
+      } catch (error) {
+          console.error('Error loading comments:', error);
+      }
+  }
+
   // Real-time comments update listener
   const pageIdentifier = window.location.pathname;
   const q = query(collection(db, 'comments'), where('page', '==', pageIdentifier), orderBy('timestamp', 'desc'));
 
   onSnapshot(q, (snapshot) => {
-    const commentsBox = document.getElementById('comments-box');
-    commentsBox.innerHTML = ''; // Clear previous comments
+      const commentsBox = document.getElementById('comments-box');
+      commentsBox.innerHTML = ''; // Clear previous comments
 
-    if (snapshot.empty) {
-        console.log("No comments found.");
-    } else {
-        snapshot.forEach((docSnap) => {
-            const comment = docSnap.data();
-            const commentId = docSnap.id; // Get the document ID
-            const timestamp = comment.timestamp ? comment.timestamp.toDate() : new Date(); // Check timestamp existence
-
-            const commentElement = document.createElement('div');
-            commentElement.innerHTML = `
-                <strong>${comment.name}</strong> (${timestamp.toLocaleString()}):
-                <p>${comment.comment}</p>
-                <button class="hidden" onclick="editComment('${commentId}', '${escapedCommentText}')">Edit</button>
-                <button class="hidden" onclick="deleteComment('${commentId}')">Delete</button>
-                <hr>
-            `;
-            commentsBox.appendChild(commentElement);
-        });
-    }
-});
-
+      snapshot.forEach((doc) => {
+          const comment = doc.data();
+          const commentElement = document.createElement('div');
+          const timestamp = comment.timestamp.toDate(); // Convert to JS Date
+          commentElement.innerHTML = `
+              <strong>${comment.name}</strong> (${timestamp.toLocaleString()}):
+              <p>${comment.comment}</p>
+              <hr>
+          `;
+          commentsBox.appendChild(commentElement);
+      });
+  });
 
   // Handle form submission
   document.getElementById('commentForm').addEventListener('submit', async function(e) {
@@ -354,6 +375,9 @@ const firebaseConfig = {
 
       const name = document.getElementById('name').value;
       const commentText = document.getElementById('comment').value;
+      const pageIdentifier = window.location.pathname; // Page URL to identify comments for this page
+
+      console.log("Submitting comment:", { name, commentText, pageIdentifier });
 
       try {
           await addDoc(collection(db, 'comments'), {
@@ -365,31 +389,16 @@ const firebaseConfig = {
 
           console.log('Comment added!');
           document.getElementById('commentForm').reset(); // Clear form
+          // No need to manually reload comments, real-time listener will update them automatically
       } catch (error) {
           console.error('Error adding comment:', error);
       }
   });
 
-  // Function to delete a comment
-  window.deleteComment = async function(commentId) {
-      const commentRef = doc(db, 'comments', commentId);
-      try {
-          await deleteDoc(commentRef);
-          console.log('Comment deleted!');
-      } catch (error) {
-          console.error('Error deleting comment:', error);
-      }
-  };
-
-  // Function to edit a comment
-  window.editComment = function(commentId, oldCommentText) {
-      const newComment = prompt("Edit your comment:", oldCommentText);
-      if (newComment !== null && newComment !== '') {
-          const commentRef = doc(db, 'comments', commentId);
-          updateDoc(commentRef, { comment: newComment })
-            .then(() => console.log('Comment updated!'))
-            .catch((error) => console.error('Error updating comment:', error));
-      }
+  // Combined on page load
+  window.onload = function() {
+      fetchTableData(); // Fetch leaderboard data
+      //loadComments(); // Initial load for comments
   };
 </script>
 
