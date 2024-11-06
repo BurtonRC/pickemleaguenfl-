@@ -1095,6 +1095,10 @@ ul {
     width: 100%;
   }
 
+  #postTable thead td, #postTable tbody td {
+    padding: 0 10px;
+  }
+
   .image-container img {
     width: 70%;
     height: auto;
