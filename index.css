@@ -425,6 +425,10 @@ ul {
   background-color: #fff;
 }
 
+#postTable thead td, #postTable tbody td {
+  padding: 0 20px;
+}
+
 /* Image container */
 .image-container {
   width: 25%; /* 1/4 of the total width */
@@ -448,18 +452,22 @@ ul {
 /* Text container */
 .text-container {
   width: 75%; /* 3/4 of the total width */
-  overflow: hidden; /* Hide overflow */
-  position: relative;
-}
-
-.text-container p {
-  margin: 0;
   max-height: 400px; /* Set a max height for the text */
+  overflow: hidden; /* Hide overflow */
   overflow-y: auto; /* Add scroll if text overflows */
   padding-right: 10px; /* Prevent scrollbar overlap */
-  box-sizing: border-box;
+  position: relative;
   line-height: 1.5;
 }
+
+/*.text-container p {
+  margin: 0;
+  max-height: 400px; / Set a max height for the text /
+  overflow-y: auto; / Add scroll if text overflows /
+  padding-right: 10px; / Prevent scrollbar overlap /
+  box-sizing: border-box;
+  line-height: 1.5;
+}*/
 
 /*News Grid */
 
@@ -876,7 +884,7 @@ ul {
     padding: 21px 20px 9px;
     font-size: 11px;
     letter-spacing: .01px;
-    line-height: 2.43;
+    line-height: 2.42;
   }
 
   .footer {
