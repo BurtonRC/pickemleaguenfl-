@@ -58,7 +58,7 @@
   
     
       <div class="hdr-main">
-        <p style="font-size: 1em; font-weight: bold; color: #b1945a; margin: 5px 0;">Week 16</p>
+        <p style="font-size: 1em; font-weight: bold; color: #b1945a; margin: 5px 0;">Week 17</p>
         <h1 class="guide">Weekly Selections</h1>
       </div>
 
@@ -94,7 +94,7 @@
    <div class="box">
     <div class="weekTable">
       <!-- Paste updated Apps Script web url here and below in JS script -->    
-      <form id="myForm" method="post" action="https://script.google.com/macros/s/AKfycbyyuj9gfQxLKLgP4HWSWGNkQXwA0ZYwiM33I66XoEn7hvpJllZiQZeuDMbMeDJwhyo/exec">
+      <form id="myForm" method="post" action="https://script.google.com/macros/s/AKfycbz3pIfc_HcjBnzSkD1GG4_wsP9CF3Q8k0UYVCEUsTbvp9Yxj-CmpsB75pVf5bDhijM/exec">
             <div>
             <table>
                 <tbody>
@@ -129,7 +129,7 @@
               <table>                 
                     <thead>
                         <tr>
-                        <th scope="col">Week 16</th>
+                        <th scope="col">Week 17</th>
                         <th scope="col">Day</th>
                         <th scope="col">DB</th>
                         <th scope="col">PS</th>
@@ -139,271 +139,277 @@
                         <tbody>
 
                           <tr>
-                            <td>Denver at LA Chargers</td>
-                            <td><strong>Thur</strong></td>
+                            <td>Kansas City at Pittsburgh</td>
+                            <td><strong>Wed</strong></td>
                             <td></td>
                             <td></td>
                             <td>
                                 <select class="team-select" id="dropdown-lar" name="Games_1">
                                     <option value="">--Select Team--</option>
-                                    <option value="Denver">Denver</option>
-                                    <option value="LA Chargers">LA Chargers</option>
+                                    <option value="Kansas City">Kansas City</option>
+                                    <option value="Pittsburgh">Pittsburgh</option>
                                 </select>
                             </td>
                           </tr>
 
                           <tr>
-                            <td>Houston at Kansas City</td>
-                            <td><strong>Sat</strong></td>
-                            <td></td>
+                            <td>Baltimore at <strong>Houston(db)</strong></td>
+                            <td><strong>Wed</strong></td>
+                            <td>
+                              <span>HnT(db)</span>  <br><br>
+                              <div class="slide-box">
+                                <label class="switch">
+                                <input type="checkbox" id="toggle-hnt" name="DriveBy_2" value="hnt(db)" /><div></div></label>
+                              </div>
+                            </td>
                             <td></td>
                             <td>
-                                <select class="team-select" id="dropdown-nyj" name="Games_2">
+                                <select class="team-select" id="dropdown-hnt" name="Games_2">
                                     <option value="">--Select Team--</option>
-                                    <option value="Houston">Houston</option>
-                                    <option value="Kansas City">Kansas City</option>
+                                    <option value="Baltimore">Baltimore</option>
+                                    <option value="hnt(db)">Houston(db)</option>
                                 </select>
                             </td>  
                           </tr>
 
                           <tr>
-                            <td><strong>Pittsburgh(db)</strong> at Baltimore</td>
-                            <td><strong>Sat</strong></td>
-                            <td>
-                              <span>PhS(db)</span>  <br><br>
-                              <div class="slide-box">
-                                <label class="switch">
-                                <input type="checkbox" id="toggle-phs" name="DriveBy_3" value="phs(db)" /><div></div></label>
-                              </div>
-                            </td>                           
+                            <td>Seattle at Chicago</td>
+                            <td><strong>Thur</strong></td>
+                            <td></td>                           
                             <td></td>
                             <td>
                                 <select class="team-select" id="dropdown-phs" name="Games_3">
                                     <option value="">--Select Team--</option>
-                                    <option value="phs(db)">Pittsburgh(db)</option>
-                                    <option value="Baltimore">Baltimore</option>
+                                    <option value="Seattle">Seattle</option>
+                                    <option value="Chicago">Chicago</option>
                                 </select>
                             </td>
                           </tr>
 
                           <tr>
-                            <td><strong>NY Giants(db)</strong> at Atlanta</td>
-                            <td>Sun</td>
-                            <td>
-                              <span>NyG(db)</span>  <br><br>
-                              <div class="slide-box">
-                                <label class="switch">
-                                <input type="checkbox" id="toggle-nyg" name="DriveBy_4" value="nyg(db)" /><div></div></label>
-                              </div>
-                            </td>                           
-                            <td></td>
-                            <td>
-                                <select class="team-select" id="dropdown-nyg" name="Games_4">
-                                    <option value="">--Select Team--</option>
-                                    <option value="nyg(db)">NY Giants(db)</option>
-                                    <option value="Atlanta">Atlanta</option>
-                                </select>
-                            </td>
-                          </tr>
-
-                          <tr>
-                            <td>Arizona at Carolina</td>
-                            <td>Sun</td>
+                            <td>LA Chargers at New England</td>
+                            <td><strong>Sat</strong></td>
                             <td></td>                           
                             <td></td>
                             <td>
-                                <select class="team-select" id="dropdown-cap" name="Games_5">
+                                <select class="team-select" id="dropdown-lac" name="Games_4">
                                     <option value="">--Select Team--</option>
-                                    <option value="Arizona">Arizona</option>
-                                    <option value="Carolina">Carolina</option>
+                                    <option value="LA Chargers">LA Chargers</option>
+                                    <option value="New England">New England</option>
                                 </select>
                             </td>
                           </tr>
 
                           <tr>
-                            <td>Detroit at <strong>Chicago(db)</strong></td>
-                            <td>Sun</td>                              
+                            <td style="line-height: 1.5;">Denver at Cincinnati<br>
+                              <strong>Disruptor (PS) GOTWk (Denver +3.5)</strong></td>
+                            <td><strong>Sat</strong></td>
+                            <td></td>                           
                             <td>
-                              <span>CoB(db)</span>  <br><br>
-                              <div class="slide-box">
-                                <label class="switch">
-                                <input type="checkbox" id="toggle-cob" name="DriveBy_6" value="cob(db)" /><div></div></label>
-                              </div>
-                            </td>
-                            <td></td>
-                            <td>
-                                <select class="team-select" id="dropdown-cob" name="Games_6">
-                                    <option value="">--Select Team--</option>
-                                    <option value="Detroit">Detroit</option>
-                                    <option value="cob(db)">Chicago(db)</option>
-                                </select>
-                            </td>
-                          </tr>
-
-                          <tr>
-                            <td>Tennessee at Indianapolis</td>
-                            <td>Sun</td>                            
-                            <td></td>
-                            <td></td>
-                            <td>
-                                <select class="team-select" id="dropdown-nyg" name="Games_7">
-                                    <option value="">--Select Team--</option>
-                                    <option value="Tennessee">Tennessee</option>
-                                    <option value="Indianapolis">Indianapolis</option>
-                                </select>
-                            </td>
-                          </tr>
-
-                          <tr>
-                            <td style="line-height: 1.5;">LA Rams at NY Jets<br>
-                              <strong>Disruptor (PS) GOTWk (NY Jets +3.5)</strong></td>
-                            <td>Sun</td>    
-                            <td></td>
-                            <td>
-                              <label for="NyJPs">NyJPs +3.5
+                              <label for="DrBPs">DrBPs +3.5
                               <!-- Make sure to change and align pointSpread no. so it enters in Sheets at the right game section -->
-                              <select class="team-select" id="NyJPs" name="PointSpread_8">
+                              <select class="team-select" id="NyJPs" name="PointSpread_5">
                                   <option value="">--Select Cover--</option>
-                                  <option value="LA Rams Covers">LA Rams Covers -3.5</option>
-                                  <option value="NY Jets Covers">NY Jets Covers +3.5</option>
+                                  <option value="Denver Covers">Denver Covers +3.5</option>
+                                  <option value="Cincinnati Covers">Cincinnati Covers -3.5</option>
                               </select>
                               </label>
                             </td>
                             <td>
-                                <select class="team-select" id="dropdown-tet" name="Games_8">
+                                <select class="team-select" id="dropdown-drb" name="Games_5">
                                     <option value="">--Select Team--</option>
-                                    <option value="LA Rams">LA Rams</option>
-                                    <option value="NY Jets">NY Jets</option>
-                                </select>
-                            </td>
-                          </tr>
-
-                          <tr>
-                            <td>Philadelphia at Washington</td>
-                            <td>Sun</td>                            
-                            <td></td>
-                            <td></td>
-                            <td>
-                                <select class="team-select" id="dropdown-wnc" name="Games_9">
-                                    <option value="">--Select Team--</option>
-                                    <option value="Philadelphia">Philadelphia</option>
-                                    <option value="Washington">Washington</option>
-                                </select>
-                            </td>
-                          </tr>
-
-                          <tr>
-                            <td><strong>Cleveland(db)</strong> at Cincinnati</td>
-                            <td>Sun</td>                            
-                            <td>
-                              <span>CdB(db)</span>  <br><br>
-                              <div class="slide-box">
-                                <label class="switch">
-                                <input type="checkbox" id="toggle-cdb" name="DriveBy_10" value="cdb(db)" /><div></div></label>
-                              </div>
-                            </td>
-                            <td></td>
-                            <td>
-                                <select class="team-select" id="dropdown-cdb" name="Games_10">
-                                    <option value="">--Select Team--</option>
-                                    <option value="cdb(db)">Cleveland(db)</option>
+                                    <option value="Denver">Denver</option>
                                     <option value="Cincinnati">Cincinnati</option>
                                 </select>
                             </td>
                           </tr>
 
                           <tr>
-                            <td>Minnesota at Seattle</td>
-                            <td>Sun</td>
-                            <td></td>
+                            <td><strong>Arizona(db)</strong> at LA Rams</td>
+                            <td><strong>Sat</strong></td>                              
+                            <td>
+                              <span>AaC(db)</span>  <br><br>
+                              <div class="slide-box">
+                                <label class="switch">
+                                <input type="checkbox" id="toggle-aac" name="DriveBy_6" value="aac(db)" /><div></div></label>
+                              </div>
+                            </td>
                             <td></td>
                             <td>
-                                <select class="team-select" id="dropdown-tet" name="Games_11">
+                                <select class="team-select" id="dropdown-aac" name="Games_6">
                                     <option value="">--Select Team--</option>
-                                    <option value="Minnesota">Minnesota</option>
-                                    <option value="Seattle">Seattle</option>
+                                    <option value="aac(db)">Arizona(db)</option>
+                                    <option value="LA Rams">LA Rams</option>
                                 </select>
                             </td>
                           </tr>
 
                           <tr>
-                            <td><strong>New England(db)</strong> at Buffalo</td>
-                            <td>Sun</td>                                                                              
+                            <td>Indianapolis at <strong>NY Giants(db)</strong></td>
+                            <td>Sun</td>                            
                             <td>
-                              <span>NeP(db)</span>  <br><br>
+                              <span>NyG(db)</span>  <br><br>
                               <div class="slide-box">
                                 <label class="switch">
-                                <input type="checkbox" id="toggle-nep" name="DriveBy_12" value="nep(db)" /><div></div></label>
+                                <input type="checkbox" id="toggle-nyg" name="DriveBy_7" value="nyg(db)" /><div></div></label>
                               </div>
                             </td>
                             <td></td>
                             <td>
-                                <select class="team-select" id="dropdown-nep" name="Games_12">
+                                <select class="team-select" id="dropdown-nyg" name="Games_7">
                                     <option value="">--Select Team--</option>
-                                    <option value="nep(db)">New England(db)</option>
+                                    <option value="Indianapolis">Indianapolis</option>
+                                    <option value="nyg(db)">NY Giants(db)</option>
+                                </select>
+                            </td>
+                          </tr>
+
+                          <tr>
+                            <td><strong>NY Jets(db)</strong> at Buffalo</td>
+                            <td>Sun</td>    
+                            <td>
+                              <span>NyJ(db)</span>  <br><br>
+                              <div class="slide-box">
+                                <label class="switch">
+                                <input type="checkbox" id="toggle-nyj" name="DriveBy_8" value="nyj(db)" /><div></div></label>
+                              </div>
+                            </td>
+                            <td></td>
+                            <td>
+                                <select class="team-select" id="dropdown-nyj" name="Games_8">
+                                    <option value="">--Select Team--</option>
+                                    <option value="nyj(db)">NY Jets(db)</option>
                                     <option value="Buffalo">Buffalo</option>
                                 </select>
                             </td>
                           </tr>
 
                           <tr>
-                            <td>Jacksonville at Las Vegas</td>
-                            <td>Sun</td>
+                            <td>Tennessee at Jacksonville</td>
+                            <td>Sun</td>                            
                             <td></td>
                             <td></td>
                             <td>
-                                <select class="team-select" id="dropdown-lvr" name="Games_13">
+                                <select class="team-select" id="dropdown-wnc" name="Games_9">
                                     <option value="">--Select Team--</option>
+                                    <option value="Tennessee">Tennessee</option>
                                     <option value="Jacksonville">Jacksonville</option>
-                                    <option value="Las Vegas">Las Vegas</option>
                                 </select>
                             </td>
                           </tr>
 
                           <tr>
-                            <td>San Francisco at Miami</td>
+                            <td>Las Vegas at New Orleans</td>
+                            <td>Sun</td>                            
+                            <td></td>
+                            <td></td>
+                            <td>
+                                <select class="team-select" id="dropdown-lvr" name="Games_10">
+                                    <option value="">--Select Team--</option>
+                                    <option value="Las Vegas">Las Vegas</option>
+                                    <option value="New Orleans">New Orleans</option>
+                                </select>
+                            </td>
+                          </tr>
+
+                          <tr>
+                            <td><strong>Carolina(db)</strong> at Tampa Bay</td>
+                            <td>Sun</td>
+                            <td>
+                              <span>CaP(db)</span>  <br><br>
+                              <div class="slide-box">
+                                <label class="switch">
+                                <input type="checkbox" id="toggle-cap" name="DriveBy_11" value="cap(db)" /><div></div></label>
+                              </div>
+                            </td>
+                            <td></td>
+                            <td>
+                                <select class="team-select" id="dropdown-cap" name="Games_11">
+                                    <option value="">--Select Team--</option>
+                                    <option value="cap(db)">Carolina(db)</option>
+                                    <option value="Tampa Bay">Tampa Bay</option>
+                                </select>
+                            </td>
+                          </tr>
+
+                          <tr>
+                            <td><strong>Dallas(db)</strong> at Philadelphia</td>
+                            <td>Sun</td>                                                                              
+                            <td>
+                              <span>DsC(db)</span>  <br><br>
+                              <div class="slide-box">
+                                <label class="switch">
+                                <input type="checkbox" id="toggle-dsc" name="DriveBy_12" value="dsc(db)" /><div></div></label>
+                              </div>
+                            </td>
+                            <td></td>
+                            <td>
+                                <select class="team-select" id="dropdown-dsc" name="Games_12">
+                                    <option value="">--Select Team--</option>
+                                    <option value="dsc(db)">Dallas(db)</option>
+                                    <option value="Philadelphia">Philadelphia</option>
+                                </select>
+                            </td>
+                          </tr>
+
+                          <tr>
+                            <td>Miami at <strong>Cleveland(db)</strong></td>
+                            <td>Sun</td>
+                            <td>
+                              <span>CdB(db)</span>  <br><br>
+                              <div class="slide-box">
+                                <label class="switch">
+                                <input type="checkbox" id="toggle-cdb" name="DriveBy_13" value="cdb(db)" /><div></div></label>
+                              </div>
+                            </td>
+                            <td></td>
+                            <td>
+                                <select class="team-select" id="dropdown-cdb" name="Games_13">
+                                    <option value="">--Select Team--</option>
+                                    <option value="Miami">Miami</option>
+                                    <option value="cdb(db)">Cleveland(db)</option>
+                                </select>
+                            </td>
+                          </tr>
+
+                          <tr>
+                            <td>Green Bay at Minnesota</td>
                             <td>Sun</td>
                             <td></td>
                             <td></td>
                             <td>
                                 <select class="team-select" id="dropdown-tet" name="Games_14">
                                     <option value="">--Select Team--</option>
-                                    <option value="San Francisco">San Francisco</option>
-                                    <option value="Miami">Miami</option>
+                                    <option value="Green Bay">Green Bay</option>
+                                    <option value="Minnesota">Minnesota</option>
                                 </select>
                             </td>
                           </tr>
 
                           <tr>
-                            <td>Tampa Bay at Dallas</td>
+                            <td>Atlanta at Washington</td>
                             <td>Sun</td>
                             <td></td>
                             <td></td>
                             <td>
                                 <select class="team-select" id="dropdown-dsc" name="Games_15">
                                     <option value="">--Select Team--</option>
-                                    <option value="Tampa Bay">Tampa Bay</option>
-                                    <option value="Dallas">Dallas</option>
+                                    <option value="Atlanta">Atlanta</option>
+                                    <option value="Washington">Washington</option>
                                 </select>
                             </td>
                           </tr>
 
                           <tr>
-                            <td><strong>New Orleans(db)</strong> at Green Bay</td>
+                            <td>Detroit at San Francisco</td>
                             <td><strong>Mon</strong></td>                           
-                            <td>
-                              <span>NoS(db)</span>  <br><br>
-                              <div class="slide-box">
-                                <label class="switch">
-                                <input type="checkbox" id="toggle-nos" name="DriveBy_16" value="nos(db)" /><div></div></label>
-                              </div>
-                            </td>
+                            <td></td>
                             <td></td>
                             <td>
                                 <select class="team-select" id="dropdown-nos" name="Games_16">
                                     <option value="">--Select Team--</option>
-                                    <option value="nos(db)">New Orleans(db)</option>
-                                    <option value="Green Bay">Green Bay</option>
+                                    <option value="Detroit">Detroit</option>
+                                    <option value="San Francisco">San Francisco</option>
                                 </select>
                             </td>
                           </tr>
@@ -572,7 +578,7 @@
       formObject[key] = value;
     });
     /* Paste updated Apps Script web url here and above at start of page */
-    fetch('https://script.google.com/macros/s/AKfycbyyuj9gfQxLKLgP4HWSWGNkQXwA0ZYwiM33I66XoEn7hvpJllZiQZeuDMbMeDJwhyo/exec', {
+    fetch('https://script.google.com/macros/s/AKfycbz3pIfc_HcjBnzSkD1GG4_wsP9CF3Q8k0UYVCEUsTbvp9Yxj-CmpsB75pVf5bDhijM/exec', {
       method: 'post',
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded',
@@ -656,23 +662,26 @@ function syncToggleAndDropdown(toggleId, dropdownId, teamValue) {
     updateDropdownBackground();
 }
 
-// Synchronize (phs)
-syncToggleAndDropdown("toggle-phs", "dropdown-phs", "phs(db)");
+// Synchronize (hnt)
+syncToggleAndDropdown("toggle-hnt", "dropdown-hnt", "hnt(db)");
+
+// Synchronize (aac)
+syncToggleAndDropdown("toggle-aac", "dropdown-aac", "aac(db)");
 
 // Synchronize (nyg)
 syncToggleAndDropdown("toggle-nyg", "dropdown-nyg", "nyg(db)");
 
-// Synchronize (cob)
-syncToggleAndDropdown("toggle-cob", "dropdown-cob", "cob(db)");
+// Synchronize (nyj)
+syncToggleAndDropdown("toggle-nyj", "dropdown-nyj", "nyj(db)");
+
+// Synchronize (cap)
+syncToggleAndDropdown("toggle-cap", "dropdown-cap", "cap(db)");
+
+// Synchronize (dsc)
+syncToggleAndDropdown("toggle-dsc", "dropdown-dsc", "dsc(db)");
 
 // Synchronize (cdb)
 syncToggleAndDropdown("toggle-cdb", "dropdown-cdb", "cdb(db)");
-
-// Synchronize (nep)
-syncToggleAndDropdown("toggle-nep", "dropdown-nep", "nep(db)");
-
-// Synchronize (nos)
-syncToggleAndDropdown("toggle-nos", "dropdown-nos", "nos(db)");
 
 
 // Add more pairs as necessary using the same pattern
